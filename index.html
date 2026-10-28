@@ -392,15 +392,15 @@
         const limb=ctx.createLinearGradient(-size*.42,-size*.82,size*.34,-size*.06);
         limb.addColorStop(0,'#ffdf56');limb.addColorStop(.46,'#f3bf39');limb.addColorStop(1,'#bc792f');
         const hand=ctx.createLinearGradient(-size*.42,-size*.80,-size*.25,-size*.52);
-        hand.addColorStop(0,'#76694a');hand.addColorStop(1,'#403b35');
+        hand.addColorStop(0,'#91805b');hand.addColorStop(.62,'#6d6048');hand.addColorStop(1,'#514b3d');
         // A soft cast shadow anchors the little figure to the path.
         ctx.fillStyle='rgba(58,43,52,.27)';ctx.beginPath();ctx.ellipse(0,-size*.015,size*.43,size*.068,0,0,Math.PI*2);ctx.fill();
         if(glow){ctx.save();ctx.shadowColor='#fff0a5';ctx.shadowBlur=size*.30;ctx.fillStyle='rgba(255,231,137,.18)';ctx.beginPath();ctx.ellipse(0,-size*.48,size*.48,size*.50,0,0,Math.PI*2);ctx.fill();ctx.restore();}
         // Stubby splayed legs and soft, dark olive feet, matching the supplied turn-around.
         ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=limb;ctx.lineWidth=size*.105;
-        ctx.beginPath();ctx.moveTo(-size*.16,-size*.14);ctx.quadraticCurveTo(-size*.17,-size*.045,-size*.23,-size*.012);ctx.moveTo(size*.15,-size*.14);ctx.quadraticCurveTo(size*.17,-size*.045,size*.23,-size*.012);ctx.stroke();
-        ctx.fillStyle=hand;ctx.beginPath();ctx.ellipse(-size*.265,-size*.014,size*.105,size*.035,-.10,0,Math.PI*2);ctx.ellipse(size*.265,-size*.014,size*.105,size*.035,.10,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='rgba(202,177,122,.48)';ctx.lineWidth=Math.max(1,size*.008);ctx.beginPath();ctx.moveTo(-size*.31,-size*.02);ctx.lineTo(-size*.34,-size*.035);ctx.moveTo(-size*.27,-size*.03);ctx.lineTo(-size*.28,-size*.047);ctx.moveTo(size*.31,-size*.02);ctx.lineTo(size*.34,-size*.035);ctx.moveTo(size*.27,-size*.03);ctx.lineTo(size*.28,-size*.047);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(-size*.14,-size*.14);ctx.quadraticCurveTo(-size*.17,-size*.045,-size*.22,-size*.012);ctx.moveTo(size*.14,-size*.14);ctx.quadraticCurveTo(size*.17,-size*.045,size*.22,-size*.012);ctx.stroke();
+        ctx.fillStyle=hand;ctx.beginPath();ctx.ellipse(-size*.25,-size*.014,size*.105,size*.032,-.10,0,Math.PI*2);ctx.ellipse(size*.25,-size*.014,size*.105,size*.032,.10,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='rgba(221,201,154,.58)';ctx.lineWidth=Math.max(1,size*.008);ctx.beginPath();ctx.moveTo(-size*.29,-size*.02);ctx.lineTo(-size*.33,-size*.035);ctx.moveTo(-size*.25,-size*.03);ctx.lineTo(-size*.26,-size*.047);ctx.moveTo(size*.29,-size*.02);ctx.lineTo(size*.33,-size*.035);ctx.moveTo(size*.25,-size*.03);ctx.lineTo(size*.26,-size*.047);ctx.stroke();
         // Thin rounded arms hang from the shoulders; on the cover the left arm reaches up for the milk orb.
         ctx.strokeStyle=limb;ctx.lineWidth=size*.082;ctx.beginPath();
         ctx.moveTo(-size*.235,-size*.63);
@@ -419,37 +419,37 @@
         // One uninterrupted, narrow pear-shaped body: broad belly, gently pinched neck.
         ctx.save();ctx.shadowColor='rgba(122,79,34,.18)';ctx.shadowBlur=size*.055;ctx.shadowOffsetY=size*.018;
         ctx.fillStyle=skin;ctx.strokeStyle='rgba(167,111,43,.22)';ctx.lineWidth=Math.max(1,size*.009);ctx.beginPath();
-        ctx.moveTo(-size*.155,-size*.955);
-        ctx.bezierCurveTo(-size*.235,-size*.98,-size*.285,-size*.91,-size*.282,-size*.81);
-        ctx.bezierCurveTo(-size*.30,-size*.72,-size*.25,-size*.66,-size*.25,-size*.58);
-        ctx.bezierCurveTo(-size*.27,-size*.48,-size*.335,-size*.34,-size*.32,-size*.225);
-        ctx.bezierCurveTo(-size*.305,-size*.115,-size*.225,-size*.075,-size*.13,-size*.085);
-        ctx.quadraticCurveTo(0,-size*.105,size*.13,-size*.085);
-        ctx.bezierCurveTo(size*.235,-size*.075,size*.305,-size*.12,size*.32,-size*.225);
-        ctx.bezierCurveTo(size*.335,-size*.34,size*.27,-size*.48,size*.25,-size*.58);
-        ctx.bezierCurveTo(size*.25,-size*.66,size*.30,-size*.72,size*.282,-size*.81);
-        ctx.bezierCurveTo(size*.285,-size*.91,size*.235,-size*.98,size*.155,-size*.955);
-        ctx.quadraticCurveTo(0,-size*1.005,-size*.155,-size*.955);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
+        ctx.moveTo(-size*.145,-size*.965);
+        ctx.bezierCurveTo(-size*.225,-size*.99,-size*.265,-size*.90,-size*.245,-size*.81);
+        ctx.bezierCurveTo(-size*.23,-size*.74,-size*.175,-size*.70,-size*.18,-size*.625);
+        ctx.bezierCurveTo(-size*.23,-size*.56,-size*.285,-size*.46,-size*.32,-size*.35);
+        ctx.bezierCurveTo(-size*.36,-size*.23,-size*.31,-size*.12,-size*.22,-size*.09);
+        ctx.bezierCurveTo(-size*.13,-size*.055,-size*.065,-size*.085,0,-size*.085);
+        ctx.bezierCurveTo(size*.065,-size*.085,size*.13,-size*.055,size*.22,-size*.09);
+        ctx.bezierCurveTo(size*.31,-size*.12,size*.36,-size*.23,size*.32,-size*.35);
+        ctx.bezierCurveTo(size*.285,-size*.46,size*.23,-size*.56,size*.18,-size*.625);
+        ctx.bezierCurveTo(size*.175,-size*.70,size*.23,-size*.74,size*.245,-size*.81);
+        ctx.bezierCurveTo(size*.265,-size*.90,size*.225,-size*.99,size*.145,-size*.965);
+        ctx.quadraticCurveTo(0,-size*1.015,-size*.145,-size*.965);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
         // A large ivory belly is inset into the lower half, with a warm reflected edge.
-        const belly=ctx.createRadialGradient(-size*.08,-size*.53,size*.008,size*.005,-size*.37,size*.38);
+        const belly=ctx.createRadialGradient(-size*.08,-size*.50,size*.008,size*.005,-size*.38,size*.35);
         belly.addColorStop(0,'#fffdf1');belly.addColorStop(.58,'#fff5df');belly.addColorStop(.87,'#f6e7ca');belly.addColorStop(1,'#ddbd88');ctx.fillStyle=belly;
-        ctx.beginPath();ctx.moveTo(-size*.205,-size*.53);ctx.bezierCurveTo(-size*.19,-size*.62,-size*.10,-size*.655,0,-size*.65);ctx.bezierCurveTo(size*.105,-size*.65,size*.20,-size*.61,size*.215,-size*.52);ctx.bezierCurveTo(size*.23,-size*.42,size*.205,-size*.26,size*.16,-size*.19);ctx.quadraticCurveTo(0,-size*.135,-size*.16,-size*.19);ctx.bezierCurveTo(-size*.205,-size*.27,-size*.23,-size*.42,-size*.205,-size*.53);ctx.closePath();ctx.fill();
+        ctx.beginPath();ctx.moveTo(-size*.205,-size*.50);ctx.bezierCurveTo(-size*.19,-size*.60,-size*.10,-size*.625,0,-size*.625);ctx.bezierCurveTo(size*.105,-size*.625,size*.20,-size*.59,size*.21,-size*.50);ctx.bezierCurveTo(size*.22,-size*.40,size*.18,-size*.245,size*.125,-size*.185);ctx.quadraticCurveTo(0,-size*.115,-size*.125,-size*.185);ctx.bezierCurveTo(-size*.18,-size*.245,-size*.22,-size*.40,-size*.205,-size*.50);ctx.closePath();ctx.fill();
         ctx.strokeStyle='rgba(255,255,245,.64)';ctx.lineWidth=Math.max(1,size*.012);ctx.beginPath();ctx.moveTo(-size*.15,-size*.55);ctx.quadraticCurveTo(0,-size*.60,size*.15,-size*.54);ctx.stroke();
         // Raised eye mounds and emerald irises are the defining silhouette of the reference frog.
         const eye=(ex,ey,scaleX=1)=>{
-          const mound=ctx.createRadialGradient(ex-size*.035,ey-size*.055,size*.005,ex,ey,size*.115);
-          mound.addColorStop(0,'#fff08a');mound.addColorStop(.57,'#f6ce4f');mound.addColorStop(1,'#c78b32');ctx.fillStyle=mound;ctx.beginPath();ctx.ellipse(ex,ey,size*.105*scaleX,size*.119,0,0,Math.PI*2);ctx.fill();
-          const iris=ctx.createRadialGradient(ex-size*.025,ey-size*.034,size*.006,ex,ey,size*.080);
-          iris.addColorStop(0,'#a2d77d');iris.addColorStop(.38,'#69ad57');iris.addColorStop(.82,'#397746');iris.addColorStop(1,'#264c39');ctx.fillStyle=iris;ctx.beginPath();ctx.ellipse(ex,ey,size*.075*scaleX,size*.080,0,0,Math.PI*2);ctx.fill();
-          ctx.fillStyle='#151f22';ctx.beginPath();ctx.ellipse(ex+size*.008,ey+size*.004,size*.030*scaleX,size*.045,0,0,Math.PI*2);ctx.fill();
-          ctx.fillStyle='rgba(255,255,255,.96)';ctx.beginPath();ctx.ellipse(ex-size*.022,ey-size*.029,size*.020*scaleX,size*.024,0,0,Math.PI*2);ctx.fill();
-          ctx.fillStyle='rgba(255,255,255,.52)';ctx.beginPath();ctx.arc(ex+size*.028,ey+size*.020,size*.008,0,Math.PI*2);ctx.fill();
+          const mound=ctx.createRadialGradient(ex-size*.026,ey-size*.043,size*.004,ex,ey,size*.095);
+          mound.addColorStop(0,'#fff08a');mound.addColorStop(.57,'#f6ce4f');mound.addColorStop(1,'#c78b32');ctx.fillStyle=mound;ctx.beginPath();ctx.ellipse(ex,ey,size*.087*scaleX,size*.098,0,0,Math.PI*2);ctx.fill();
+          const iris=ctx.createRadialGradient(ex-size*.021,ey-size*.028,size*.005,ex,ey,size*.067);
+          iris.addColorStop(0,'#a2d77d');iris.addColorStop(.38,'#69ad57');iris.addColorStop(.82,'#397746');iris.addColorStop(1,'#264c39');ctx.fillStyle=iris;ctx.beginPath();ctx.ellipse(ex,ey,size*.065*scaleX,size*.069,0,0,Math.PI*2);ctx.fill();
+          ctx.fillStyle='#151f22';ctx.beginPath();ctx.ellipse(ex+size*.007,ey+size*.004,size*.026*scaleX,size*.039,0,0,Math.PI*2);ctx.fill();
+          ctx.fillStyle='rgba(255,255,255,.96)';ctx.beginPath();ctx.ellipse(ex-size*.019,ey-size*.026,size*.016*scaleX,size*.020,0,0,Math.PI*2);ctx.fill();
+          ctx.fillStyle='rgba(255,255,255,.52)';ctx.beginPath();ctx.arc(ex+size*.025,ey+size*.019,size*.006,0,Math.PI*2);ctx.fill();
         };
-        eye(-size*.125,-size*.842,1.04);eye(size*.125,-size*.842,.96);
-        // Tiny nose marks, flushed cheeks, a curved smile, and a soft forehead sheen.
-        ctx.fillStyle='rgba(146,99,45,.72)';ctx.beginPath();ctx.arc(-size*.034,-size*.738,size*.007,0,Math.PI*2);ctx.arc(size*.034,-size*.738,size*.007,0,Math.PI*2);ctx.fill();
-        ctx.fillStyle='rgba(231,132,102,.23)';ctx.beginPath();ctx.ellipse(-size*.205,-size*.61,size*.052,size*.020,-.12,0,Math.PI*2);ctx.ellipse(size*.205,-size*.61,size*.052,size*.020,.12,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='#714b39';ctx.lineWidth=Math.max(1.4,size*.012);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.071,-size*.704);ctx.quadraticCurveTo(0,-size*.669,size*.071,-size*.704);ctx.stroke();
+        eye(-size*.112,-size*.852,1.04);eye(size*.112,-size*.852,.96);
+        // Softly flushed cheeks, a curved smile, and a small forehead sheen.
+        ctx.fillStyle='rgba(231,132,102,.20)';ctx.beginPath();ctx.ellipse(-size*.205,-size*.61,size*.048,size*.018,-.12,0,Math.PI*2);ctx.ellipse(size*.205,-size*.61,size*.048,size*.018,.12,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='#714b39';ctx.lineWidth=Math.max(1.4,size*.011);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.067,-size*.735);ctx.quadraticCurveTo(0,-size*.696,size*.067,-size*.735);ctx.stroke();
         ctx.fillStyle='rgba(255,255,224,.38)';ctx.beginPath();ctx.ellipse(-size*.14,-size*.925,size*.070,size*.018,-.34,0,Math.PI*2);ctx.fill();
         if(defending){ctx.save();ctx.shadowColor='#b5eaff';ctx.shadowBlur=size*.17;ctx.strokeStyle='rgba(197,235,255,.86)';ctx.lineWidth=Math.max(2,size*.022);ctx.beginPath();ctx.ellipse(0,-size*.48,size*.48,size*.48,0,0,Math.PI*2);ctx.stroke();ctx.restore();}
         ctx.restore();
