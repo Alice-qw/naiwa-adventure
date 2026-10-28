@@ -432,10 +432,10 @@
         ctx.bezierCurveTo(size*.235,-size*.90,size*.205,-size*.99,size*.145,-size*.965);
         ctx.quadraticCurveTo(0,-size*1.015,-size*.145,-size*.965);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
         // A large ivory belly is inset into the lower half, with a warm reflected edge.
-        const belly=ctx.createRadialGradient(-size*.08,-size*.50,size*.008,size*.005,-size*.38,size*.35);
+        const belly=ctx.createRadialGradient(-size*.08,-size*.47,size*.008,size*.005,-size*.42,size*.27);
         belly.addColorStop(0,'#fffdf1');belly.addColorStop(.58,'#fff5df');belly.addColorStop(.87,'#f6e7ca');belly.addColorStop(1,'#ddbd88');ctx.fillStyle=belly;
-        ctx.beginPath();ctx.moveTo(-size*.205,-size*.50);ctx.bezierCurveTo(-size*.19,-size*.60,-size*.10,-size*.625,0,-size*.625);ctx.bezierCurveTo(size*.105,-size*.625,size*.20,-size*.59,size*.21,-size*.50);ctx.bezierCurveTo(size*.22,-size*.40,size*.18,-size*.245,size*.125,-size*.185);ctx.quadraticCurveTo(0,-size*.115,-size*.125,-size*.185);ctx.bezierCurveTo(-size*.18,-size*.245,-size*.22,-size*.40,-size*.205,-size*.50);ctx.closePath();ctx.fill();
-        ctx.strokeStyle='rgba(255,255,245,.64)';ctx.lineWidth=Math.max(1,size*.012);ctx.beginPath();ctx.moveTo(-size*.15,-size*.55);ctx.quadraticCurveTo(0,-size*.60,size*.15,-size*.54);ctx.stroke();
+        ctx.beginPath();ctx.moveTo(-size*.19,-size*.48);ctx.bezierCurveTo(-size*.185,-size*.56,-size*.095,-size*.60,0,-size*.60);ctx.bezierCurveTo(size*.10,-size*.60,size*.19,-size*.56,size*.19,-size*.48);ctx.bezierCurveTo(size*.22,-size*.40,size*.18,-size*.30,size*.12,-size*.245);ctx.quadraticCurveTo(0,-size*.205,-size*.12,-size*.245);ctx.bezierCurveTo(-size*.18,-size*.30,-size*.22,-size*.40,-size*.19,-size*.48);ctx.closePath();ctx.fill();
+        ctx.strokeStyle='rgba(255,255,245,.64)';ctx.lineWidth=Math.max(1,size*.012);ctx.beginPath();ctx.moveTo(-size*.14,-size*.53);ctx.quadraticCurveTo(0,-size*.59,size*.14,-size*.53);ctx.stroke();
         // Raised eye mounds and emerald irises are the defining silhouette of the reference frog.
         const eye=(ex,ey,scaleX=1)=>{
           const mound=ctx.createRadialGradient(ex-size*.026,ey-size*.043,size*.004,ex,ey,size*.095);
