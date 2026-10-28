@@ -10,27 +10,41 @@
       color-scheme: dark;
       --cream: #fff4d5;
       --gold: #ffd56d;
-      --ink: #292033;
-      --plum: #34283e;
-      --panel: rgba(37, 29, 47, .86);
-      --line: rgba(255, 244, 213, .24);
+      --ink: #30223a;
+      --plum: #472a43;
+      --panel: rgba(44, 31, 50, .82);
+      --line: rgba(255, 244, 213, .28);
     }
     * { box-sizing: border-box; }
     html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #201a29; }
     body { font-family: ui-rounded, "Trebuchet MS", "Microsoft YaHei", system-ui, sans-serif; color: var(--cream); touch-action: none; user-select: none; -webkit-user-select: none; }
     button { font: inherit; color: inherit; border: 0; cursor: pointer; touch-action: manipulation; }
-    #game { position: fixed; width: min(100vw, 177.7778vh); height: min(100vh, 56.25vw); left: 50%; top: 50%; transform: translate(-50%, -50%); overflow: hidden; background: #282035; border: 1px solid rgba(255, 239, 206, .18); box-shadow: 0 24px 90px rgba(0,0,0,.45); }
+    #game { position: fixed; width: min(100vw, 177.7778vh); height: min(100vh, 56.25vw); left: 50%; top: 50%; transform: translate(-50%, -50%); overflow: hidden; background: #282035; border: 1px solid rgba(255, 239, 206, .18); box-shadow: 0 24px 90px rgba(0,0,0,.45); isolation: isolate; }
     #scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
     .hidden { display: none !important; }
     .glass { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 12px 34px rgba(14, 10, 20, .25); backdrop-filter: blur(12px); }
 
-    #title-screen { position: absolute; inset: 0; display: flex; align-items: center; padding: 5.4%; background: linear-gradient(90deg, rgba(26, 19, 32, .66), rgba(26, 19, 32, .30) 37%, rgba(26, 19, 32, .02) 72%); }
-    .title-card { width: min(43%, 520px); padding: 0; border-radius: 0; background: transparent; border: 0; box-shadow: none; }
-    .eyebrow { margin: 0 0 10px; color: #ffe5a1; font-size: 11px; letter-spacing: .2em; font-weight: 800; text-transform: uppercase; }
-    h1 { margin: 0; font-family: Georgia, "STSong", "Songti SC", serif; color: #fff5dc; font-size: clamp(34px, 5.6vw, 68px); letter-spacing: .04em; line-height: 1.05; text-shadow: 0 4px 18px rgba(0,0,0,.35); }
-    .subtitle { max-width: 34em; margin: 14px 0 22px; color: rgba(255, 247, 227, .86); line-height: 1.65; font-size: clamp(13px, 1.5vw, 16px); }
-    .title-note { margin: 18px 0 0; color: rgba(255, 244, 213, .65); font-size: 11px; line-height: 1.5; }
-    .primary { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 12px; padding: 0 22px; border-radius: 7px; color: #fff2cb; background: linear-gradient(135deg, #583c59, #3d2b49); border: 1px solid rgba(255,220,137,.45); box-shadow: 0 8px 22px rgba(33, 18, 40, .30), inset 0 1px rgba(255,255,255,.12); font-weight: 900; letter-spacing: .04em; transition: transform .15s ease, filter .15s ease; }
+    #title-screen { position: absolute; inset: 0; display: flex; align-items: center; padding: 5.5%; background: linear-gradient(90deg, rgba(255,248,229,.88) 0%, rgba(255,244,226,.76) 31%, rgba(255,243,223,.40) 43%, rgba(255,243,223,.04) 61%, transparent 75%); }
+    .title-card { width: min(38%, 500px); padding: 0; border-radius: 0; background: transparent; border: 0; box-shadow: none; position: relative; z-index: 2; }
+    .eyebrow { margin: 0 0 13px; color: #72504b; font-size: 11px; letter-spacing: .18em; font-weight: 900; text-transform: uppercase; }
+    h1 { margin: 0; font-family: Georgia, "STSong", "Songti SC", serif; color: #37243e; font-size: clamp(34px, 5.25vw, 66px); letter-spacing: .04em; line-height: 1.05; text-shadow: 0 2px 14px rgba(255,248,227,.45); }
+    .subtitle { max-width: 31em; margin: 17px 0 25px; color: #5d4852; line-height: 1.78; font-size: clamp(13px, 1.42vw, 16px); font-weight: 650; }
+    .title-note { margin: 17px 0 0; color: rgba(83, 63, 68, .72); font-size: 10px; line-height: 1.6; }
+    .title-utilities { position: absolute; z-index: 3; top: max(22px, env(safe-area-inset-top)); left: 5.4%; display: flex; gap: 10px; }
+    .utility-btn { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: #4e3947; background: rgba(255,250,237,.52); border: 1px solid rgba(91,67,74,.22); box-shadow: 0 5px 16px rgba(73,52,67,.08); font-size: 17px; backdrop-filter: blur(8px); }
+    .utility-btn:hover { background: rgba(255,250,237,.82); transform: translateY(-1px); }
+    .primary { display: flex; width: 100%; min-height: 58px; align-items: center; justify-content: space-between; gap: 12px; padding: 0 18px; border-radius: 10px; color: #fff4d7; background: linear-gradient(110deg, #563248, #38233d); border: 1px solid rgba(83,48,69,.24); box-shadow: 0 10px 24px rgba(62,35,60,.22), inset 0 1px rgba(255,255,255,.16); font-weight: 900; letter-spacing: .03em; transition: transform .15s ease, filter .15s ease; }
+    .primary-icon { font-size: 20px; line-height: 1; }
+    .primary-label { flex: 1; text-align: center; font-size: 16px; }
+    .primary-arrow { font-size: 22px; font-weight: 500; }
+    .continue-btn { display: flex; width: 100%; min-height: 56px; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; padding: 8px 17px; text-align: left; color: #4d3947; background: rgba(255,250,238,.60); border: 1px solid rgba(91,67,74,.32); border-radius: 9px; box-shadow: 0 6px 18px rgba(73,52,67,.07); }
+    .continue-btn strong { display: block; font-size: 14px; }
+    .continue-btn small { display: block; margin-top: 3px; color: #806e71; font-size: 10px; }
+    .continue-arrow { color: #75505c; font-size: 23px; }
+    .help-panel { position: absolute; z-index: 5; top: 74px; left: 5.4%; width: min(330px, 38vw); padding: 17px 18px; color: #4c3945; background: rgba(255,250,238,.96); border: 1px solid rgba(99,72,76,.22); border-radius: 15px; box-shadow: 0 16px 42px rgba(58,38,57,.18); backdrop-filter: blur(12px); }
+    .help-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 9px; font-size: 14px; font-weight: 900; }
+    .help-close { width: 28px; height: 28px; border-radius: 50%; color: #5e4955; background: rgba(99,72,76,.09); font-size: 18px; }
+    .help-panel p { margin: 0; color: #76646a; font-size: 11px; line-height: 1.8; }
     .primary:hover { transform: translateY(-2px); filter: brightness(1.05); }
     .primary:active { transform: translateY(1px); }
     .secondary { min-height: 42px; padding: 0 15px; border-radius: 11px; background: rgba(255,255,255,.10); border: 1px solid var(--line); font-weight: 700; }
@@ -77,15 +91,22 @@
     .modal-card h2 { margin: 4px 0 10px; font-family: Georgia, "STSong", serif; font-size: clamp(26px, 6vw, 36px); color: #fff2cc; }
     .modal-card p { margin: 0 auto 18px; max-width: 34em; color: rgba(255,244,213,.76); font-size: 13px; line-height: 1.65; }
     .modal-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; }
+    .modal-actions .primary { width: auto; min-width: 140px; justify-content: center; }
     .modal-kicker { color: #ffda7c; font-size: 10px; letter-spacing: .18em; font-weight: 900; }
     #score-line { margin: -5px 0 18px; color: #ffe2a0; font-size: 12px; font-weight: 800; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
     @media (max-width: 680px) {
-      #title-screen { align-items: center; padding: 5.2%; background: linear-gradient(90deg, rgba(25,18,31,.70), rgba(25,18,31,.26) 55%, rgba(25,18,31,.05)); }
-      .title-card { width: 47%; padding: 0; border-radius: 0; }
+      #title-screen { align-items: center; padding: 5.2%; background: linear-gradient(90deg, rgba(255,248,229,.90) 0%, rgba(255,244,226,.78) 38%, rgba(255,243,223,.23) 66%, transparent 82%); }
+      .title-card { width: 44%; padding: 0; border-radius: 0; }
+      .title-utilities { left: 5%; top: max(12px, env(safe-area-inset-top)); gap: 7px; }
+      .utility-btn { width: 36px; height: 36px; font-size: 15px; }
+      .help-panel { top: 58px; left: 5%; width: min(300px, 72vw); }
       .subtitle { margin: 10px 0 15px; }
-      .title-note { margin-top: 12px; }
+      .title-note { margin-top: 12px; font-size: 9px; }
+      .primary { min-height: 49px; padding-inline: 11px; }
+      .primary-label { font-size: 13px; }
+      .continue-btn { min-height: 48px; margin-top: 7px; padding: 6px 11px; }
       .top-row { inset-inline: 9px; gap: 6px; }
       .health-card { width: 37vw; padding: 8px; }
       .center-card { min-width: 108px; padding: 8px 10px; }
@@ -113,11 +134,20 @@
     <canvas id="scene" aria-label="奶蛙在奶笑村抵御影怪的游戏画面"></canvas>
 
     <section id="title-screen" aria-labelledby="game-title">
+      <div class="title-utilities" aria-label="页面设置">
+        <button class="utility-btn" id="title-fullscreen-button" aria-label="切换全屏" title="切换全屏">⛶</button>
+        <button class="utility-btn" id="settings-button" aria-label="查看操作说明" title="查看操作说明">⚙</button>
+      </div>
+      <aside class="help-panel hidden" id="help-panel" aria-label="游戏操作说明">
+        <div class="help-head"><span>冒险操作</span><button class="help-close" id="help-close" aria-label="关闭操作说明">×</button></div>
+        <p>移动：WASD / 方向键<br>奶球：F　防御：空格　冲刺：Shift<br>大笑：E　奶蛋支援：V<br>手机上可使用画面下方的触控按键。</p>
+      </aside>
       <div class="title-card">
         <p class="eyebrow">七章冒险 · 从这里出发</p>
         <h1 id="game-title">勇者奶蛙传</h1>
         <p class="subtitle">关于如何从憋笑魔王手中救下公主这件事。跟着奶蛙穿过奶笑村，用奶球和大笑闯过冒险关卡。</p>
-        <button class="primary" id="start-button">准备好出发 <span aria-hidden="true">➜</span></button>
+        <button class="primary" id="start-button"><span class="primary-icon" aria-hidden="true">▷</span><span class="primary-label">准备好出发</span><span class="primary-arrow" aria-hidden="true">→</span></button>
+        <button class="continue-btn" id="continue-button"><span><strong>继续冒险</strong><small id="continue-note">本机进度 · 从奶笑村出发</small></span><span class="continue-arrow" aria-hidden="true">›</span></button>
         <p class="title-note">电脑：WASD / 方向键移动 · F 奶球 · 空格防御 · E 大笑 · V 奶蛋<br>手机：使用屏幕下方按键 · 本页进度保存在当前浏览器</p>
       </div>
     </section>
@@ -187,6 +217,12 @@
       const controls = document.getElementById('touch-controls');
       const modal = document.getElementById('modal');
       const titleButton = document.getElementById('start-button');
+      const continueButton = document.getElementById('continue-button');
+      const continueNote = document.getElementById('continue-note');
+      const titleFullscreenButton = document.getElementById('title-fullscreen-button');
+      const settingsButton = document.getElementById('settings-button');
+      const helpPanel = document.getElementById('help-panel');
+      const helpCloseButton = document.getElementById('help-close');
       const pauseButton = document.getElementById('pause-button');
       const fullscreenButton = document.getElementById('fullscreen-button');
       const resumeButton = document.getElementById('resume-button');
@@ -203,12 +239,25 @@
 
       let width = 0, height = 0, dpr = 1;
       let active = false, paused = false, finished = false;
-      let lastFrame = 0, time = 0, spawnClock = 0, toastClock = 0;
+      let lastFrame = 0, time = 0, spawnClock = 0, toastClock = 0, progressClock = 0;
       let wave = 1, spawned = 0, wavePause = 0, score = 0, best = 0;
       let player, enemies, shots, sparks, held, frameId;
       const waveSizes = [5, 6, 7];
       const keyMap = { ArrowLeft: 'left', a: 'left', A: 'left', ArrowRight: 'right', d: 'right', D: 'right', ArrowUp: 'up', w: 'up', W: 'up', ArrowDown: 'down', s: 'down', S: 'down', ' ': 'defend', Shift: 'dash', f: 'attack', F: 'attack' };
       try { best = Number(localStorage.getItem('naiwa-adventure-best') || 0); } catch (_) { best = 0; }
+      const progressKey='naiwa-adventure-progress';
+
+      function readProgress(){try{return JSON.parse(localStorage.getItem(progressKey)||'null');}catch(_){return null;}}
+      function updateContinueNote(){
+        const saved=readProgress();
+        continueNote.textContent=saved?`已保存进度 · 第 ${Math.max(1,Number(saved.wave)||1)} 波`:'本机存档 · 开始后自动保存';
+      }
+      function saveProgress(){
+        if(!player||!active||finished)return;
+        try{localStorage.setItem(progressKey,JSON.stringify({wave,score,hp:Math.ceil(player.hp),savedAt:Date.now()}));}catch(_){}
+        updateContinueNote();
+      }
+      function clearProgress(){try{localStorage.removeItem(progressKey);}catch(_){}updateContinueNote();}
 
       function resize() {
         const rect = canvas.getBoundingClientRect();
@@ -243,58 +292,75 @@
       }
       function drawCastle(x, base, scale) {
         ctx.save();
+        ctx.fillStyle='rgba(51,37,72,.30)';ctx.beginPath();ctx.ellipse(x,base+scale*.08,scale*1.55,scale*.16,0,0,Math.PI*2);ctx.fill();
         const wall=ctx.createLinearGradient(x-scale,base-scale,x+scale,base);
-        wall.addColorStop(0,'#f3d9b0'); wall.addColorStop(.5,'#fff0d2'); wall.addColorStop(1,'#cfad95');
-        const roof=ctx.createLinearGradient(0,base-scale*1.75,0,base-scale*1.05);
-        roof.addColorStop(0,'#8e536b'); roof.addColorStop(1,'#593951');
-        ctx.fillStyle='rgba(62,43,62,.24)';ctx.beginPath();ctx.ellipse(x,base+7,scale*1.55,scale*.15,0,0,Math.PI*2);ctx.fill();
-        // Main keep and two side towers
-        ctx.fillStyle=wall;ctx.fillRect(x-scale*.73,base-scale*1.36,scale*1.46,scale*1.36);
-        ctx.fillRect(x-scale*1.18,base-scale*1.16,scale*.49,scale*1.16);
-        ctx.fillRect(x+scale*.69,base-scale*1.16,scale*.49,scale*1.16);
-        ctx.fillStyle=roof;
-        for(const t of [{cx:x,top:1.74,w:.78},{cx:x-scale*.94,top:1.52,w:.58},{cx:x+scale*.94,top:1.52,w:.58}]){
-          ctx.beginPath();ctx.moveTo(t.cx-scale*t.w/2,base-scale*1.12);ctx.quadraticCurveTo(t.cx,base-scale*(t.top+.06),t.cx+scale*t.w/2,base-scale*1.12);ctx.closePath();ctx.fill();
-          ctx.strokeStyle='rgba(255,220,179,.42)';ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(t.cx,base-scale*t.top);ctx.lineTo(t.cx,base-scale*1.12);ctx.stroke();
+        wall.addColorStop(0,'#b9a4b4');wall.addColorStop(.24,'#f4dfca');wall.addColorStop(.58,'#e8cbbf');wall.addColorStop(1,'#a88ca5');
+        const keep=ctx.createLinearGradient(x-scale,base-scale,x+scale,base-scale*.12);
+        keep.addColorStop(0,'#c7b2bb');keep.addColorStop(.45,'#f5dfca');keep.addColorStop(1,'#b99aac');
+        ctx.fillStyle='rgba(91,67,105,.44)';
+        ctx.beginPath();ctx.moveTo(x-scale*1.36,base-scale*.08);ctx.lineTo(x-scale*1.18,base-scale*1.05);ctx.lineTo(x-scale*.76,base-scale*1.35);ctx.lineTo(x-scale*.38,base-scale*.94);ctx.lineTo(x,base-scale*1.18);ctx.lineTo(x+scale*.42,base-scale*.88);ctx.lineTo(x+scale*.84,base-scale*1.24);ctx.lineTo(x+scale*1.26,base-scale*.92);ctx.lineTo(x+scale*1.44,base);ctx.closePath();ctx.fill();
+        ctx.fillStyle=keep;ctx.fillRect(x-scale*.82,base-scale*.96,scale*1.64,scale*.96);
+        ctx.fillStyle='rgba(115,75,111,.18)';ctx.fillRect(x+scale*.45,base-scale*.96,scale*.37,scale*.96);
+        ctx.strokeStyle='rgba(255,242,218,.44)';ctx.lineWidth=Math.max(1,scale*.012);
+        for(let row=0;row<5;row++){const yy=base-scale*(.20+row*.17);ctx.beginPath();ctx.moveTo(x-scale*.79,yy);ctx.lineTo(x+scale*.79,yy);ctx.stroke();}
+        const tower=(cx,b,w,h,roofH,light=true)=>{
+          const face=ctx.createLinearGradient(cx-w*.5,b-h,cx+w*.5,b);face.addColorStop(0,'#f6e3cf');face.addColorStop(.52,'#d8c0c1');face.addColorStop(1,'#947c9d');
+          ctx.fillStyle=face;ctx.fillRect(cx-w*.5,b-h,w,h);
+          ctx.fillStyle='rgba(87,61,98,.18)';ctx.fillRect(cx+w*.22,b-h,w*.28,h);
+          ctx.fillStyle='#f3ddcb';ctx.fillRect(cx-w*.56,b-h*.11,w*1.12,h*.06);
+          // crenellated parapet
+          ctx.fillStyle='#d6c0c2';ctx.fillRect(cx-w*.56,b-h,w*1.12,h*.10);
+          for(let i=0;i<5;i++)if(i%2===0)ctx.fillRect(cx-w*.56+i*w*.28,b-h-h*.065,w*.17,h*.08);
+          const roof=ctx.createLinearGradient(cx-w*.62,b-h-roofH,cx+w*.62,b-h);roof.addColorStop(0,'#493558');roof.addColorStop(.50,'#805274');roof.addColorStop(1,'#3c2d50');ctx.fillStyle=roof;
+          ctx.beginPath();ctx.moveTo(cx-w*.66,b-h+h*.02);ctx.quadraticCurveTo(cx-w*.12,b-h-roofH*.92,cx,b-h-roofH);ctx.quadraticCurveTo(cx+w*.18,b-h-roofH*.90,cx+w*.66,b-h+h*.02);ctx.closePath();ctx.fill();
+          ctx.strokeStyle='rgba(255,226,191,.30)';ctx.lineWidth=Math.max(1,scale*.009);
+          for(let k=1;k<4;k++){const yy=b-h-roofH*(1-k/4);ctx.beginPath();ctx.moveTo(cx-w*.5*(k/4),yy);ctx.quadraticCurveTo(cx,yy-scale*.06,cx+w*.5*(k/4),yy);ctx.stroke();}
+          // glowing arched windows
+          const wy=b-h*.56,ww=w*.19,wh=h*.27;
+          ctx.fillStyle='rgba(71,44,79,.88)';ctx.beginPath();ctx.moveTo(cx-ww,wy+wh);ctx.lineTo(cx-ww,wy+wh*.42);ctx.quadraticCurveTo(cx,wy-wh*.35,cx+ww,wy+wh*.42);ctx.lineTo(cx+ww,wy+wh);ctx.closePath();ctx.fill();
+          if(light){const glow=ctx.createLinearGradient(cx,wy,cx,wy+wh);glow.addColorStop(0,'#fff4c9');glow.addColorStop(1,'#d99067');ctx.fillStyle=glow;ctx.fillRect(cx-w*.025,wy+wh*.50,w*.05,wh*.5);ctx.fillRect(cx-ww,wy+wh*.69,ww*2,h*.018);}
+          ctx.strokeStyle='rgba(91,62,93,.30)';ctx.lineWidth=Math.max(1,scale*.008);ctx.strokeRect(cx-w*.5,b-h,w,h);
+          ctx.strokeStyle='rgba(255,242,221,.38)';ctx.beginPath();ctx.moveTo(cx-w*.36,b-h*.78);ctx.lineTo(cx-w*.36,b-h*.16);ctx.moveTo(cx+w*.34,b-h*.78);ctx.lineTo(cx+w*.34,b-h*.16);ctx.stroke();
+        };
+        tower(x-scale*1.02,base,scale*.34,scale*1.17,scale*.43);
+        tower(x-scale*.54,base-scale*.02,scale*.38,scale*1.58,scale*.52);
+        tower(x-scale*.03,base-scale*.06,scale*.50,scale*1.86,scale*.63);
+        tower(x+scale*.54,base-scale*.01,scale*.38,scale*1.54,scale*.52);
+        tower(x+scale*1.03,base,scale*.34,scale*1.18,scale*.43);
+        // Deep arched entrance and hanging banners
+        ctx.fillStyle='#49364f';ctx.beginPath();ctx.moveTo(x-scale*.20,base);ctx.lineTo(x-scale*.20,base-scale*.42);ctx.quadraticCurveTo(x,base-scale*.74,x+scale*.20,base-scale*.42);ctx.lineTo(x+scale*.20,base);ctx.closePath();ctx.fill();
+        ctx.strokeStyle='rgba(255,219,177,.54)';ctx.lineWidth=Math.max(1,scale*.018);ctx.beginPath();ctx.moveTo(x-scale*.23,base-scale*.40);ctx.quadraticCurveTo(x,base-scale*.78,x+scale*.23,base-scale*.40);ctx.stroke();
+        for(const [fx,fc] of [[x-scale*.73,'#bf5b75'],[x+scale*.75,'#e2b950']]){
+          ctx.strokeStyle='#5b416c';ctx.lineWidth=Math.max(1,scale*.012);ctx.beginPath();ctx.moveTo(fx,base-scale*1.68);ctx.lineTo(fx,base-scale*1.94);ctx.stroke();
+          ctx.fillStyle=fc;ctx.beginPath();ctx.moveTo(fx,base-scale*1.91);ctx.quadraticCurveTo(fx+scale*.17,base-scale*1.83,fx+scale*.29,base-scale*1.86);ctx.lineTo(fx+scale*.05,base-scale*1.75);ctx.lineTo(fx,base-scale*1.79);ctx.closePath();ctx.fill();
         }
-        // Warm arched windows
-        for(const wx of [x-scale*.48,x,x+scale*.48]){
-          ctx.fillStyle='#75475e';ctx.beginPath();ctx.moveTo(wx-scale*.095,base-scale*.56);ctx.lineTo(wx-scale*.095,base-scale*.78);ctx.quadraticCurveTo(wx,base-scale*.94,wx+scale*.095,base-scale*.78);ctx.lineTo(wx+scale*.095,base-scale*.56);ctx.closePath();ctx.fill();
-          ctx.fillStyle='#ffe5a2';ctx.fillRect(wx-scale*.012,base-scale*.78,scale*.024,scale*.22);ctx.fillRect(wx-scale*.09,base-scale*.69,scale*.18,scale*.018);
-        }
-        // Door, stone courses and small battlements
-        ctx.fillStyle='#69435c';ctx.beginPath();ctx.moveTo(x-scale*.19,base);ctx.lineTo(x-scale*.19,base-scale*.48);ctx.quadraticCurveTo(x,base-scale*.73,x+scale*.19,base-scale*.48);ctx.lineTo(x+scale*.19,base);ctx.closePath();ctx.fill();
-        ctx.strokeStyle='rgba(129,90,82,.22)';ctx.lineWidth=1;
-        for(let yy=base-scale*.27;yy>base-scale*1.3;yy-=scale*.22){ctx.beginPath();ctx.moveTo(x-scale*.72,yy);ctx.lineTo(x+scale*.72,yy);ctx.stroke();}
-        ctx.fillStyle='#fff0d2';for(const tx of [x-scale*1.18,x-scale*.99,x-scale*.80,x+scale*.70,x+scale*.89,x+scale*1.08])ctx.fillRect(tx,base-scale*1.25,scale*.12,scale*.13);
-        // Tiny pennants
-        ctx.strokeStyle='#74506b';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x-scale*.94,base-scale*1.53);ctx.lineTo(x-scale*.94,base-scale*1.81);ctx.moveTo(x+scale*.94,base-scale*1.53);ctx.lineTo(x+scale*.94,base-scale*1.81);ctx.stroke();
-        ctx.fillStyle='#d95874';ctx.beginPath();ctx.moveTo(x-scale*.94,base-scale*1.79);ctx.lineTo(x-scale*.67,base-scale*1.72);ctx.lineTo(x-scale*.94,base-scale*1.65);ctx.fill();
-        ctx.fillStyle='#e9b74c';ctx.beginPath();ctx.moveTo(x+scale*.94,base-scale*1.79);ctx.lineTo(x+scale*1.2,base-scale*1.72);ctx.lineTo(x+scale*.94,base-scale*1.65);ctx.fill();
         ctx.restore();
       }
       function drawTitleBackground() {
-        const sky=ctx.createLinearGradient(0,0,0,height);sky.addColorStop(0,'#beb0d5');sky.addColorStop(.36,'#f2c9cb');sky.addColorStop(.72,'#f9dca3');sky.addColorStop(1,'#f3c584');ctx.fillStyle=sky;ctx.fillRect(0,0,width,height);
-        const sunX=width*.40,sunY=height*.35,r=Math.min(width,height)*.16;
-        const haze=ctx.createRadialGradient(sunX,sunY,1,sunX,sunY,r*2.2);haze.addColorStop(0,'rgba(255,249,208,.82)');haze.addColorStop(1,'rgba(255,227,174,0)');ctx.fillStyle=haze;ctx.fillRect(sunX-r*2.2,sunY-r*2.2,r*4.4,r*4.4);
-        ctx.fillStyle='#fff2c7';ctx.beginPath();ctx.arc(sunX,sunY,r*.40,0,Math.PI*2);ctx.fill();
-        drawCloud(width*.12,height*.21,height*.15,.38);drawCloud(width*.47,height*.15,height*.11,.40);
-        // Purple storybook storm clouds gather behind the castle
-        const cloud=ctx.createLinearGradient(0,0,width*.2,height*.45);cloud.addColorStop(0,'rgba(126,79,157,.88)');cloud.addColorStop(1,'rgba(92,68,139,.50)');ctx.fillStyle=cloud;
-        ctx.beginPath();ctx.ellipse(width*.79,height*.14,width*.23,height*.17,0,0,Math.PI*2);ctx.ellipse(width*.93,height*.17,width*.19,height*.14,0,0,Math.PI*2);ctx.ellipse(width*.70,height*.20,width*.16,height*.12,0,0,Math.PI*2);ctx.fill();
-        // Distant blue-green ridges and warm fields
-        ctx.fillStyle='#9cabc2';ctx.beginPath();ctx.moveTo(0,height*.57);ctx.lineTo(width*.13,height*.37);ctx.lineTo(width*.24,height*.55);ctx.lineTo(width*.39,height*.34);ctx.lineTo(width*.53,height*.58);ctx.lineTo(width*.71,height*.39);ctx.lineTo(width*.87,height*.57);ctx.lineTo(width,height*.43);ctx.lineTo(width,height*.83);ctx.lineTo(0,height*.83);ctx.fill();
-        const hills=ctx.createLinearGradient(0,height*.46,0,height*.86);hills.addColorStop(0,'#95a987');hills.addColorStop(.45,'#c4c38d');hills.addColorStop(1,'#e6cb8c');ctx.fillStyle=hills;
-        ctx.beginPath();ctx.moveTo(0,height*.66);ctx.quadraticCurveTo(width*.16,height*.48,width*.32,height*.66);ctx.quadraticCurveTo(width*.48,height*.49,width*.63,height*.67);ctx.quadraticCurveTo(width*.82,height*.44,width,height*.65);ctx.lineTo(width,height*.91);ctx.lineTo(0,height*.91);ctx.fill();
-        // Meadow and the winding road
-        const meadow=ctx.createLinearGradient(0,height*.72,0,height);meadow.addColorStop(0,'#e8d49c');meadow.addColorStop(1,'#f2dfae');ctx.fillStyle=meadow;ctx.fillRect(0,height*.73,width,height*.27);
-        ctx.fillStyle='rgba(255,245,210,.66)';ctx.beginPath();ctx.moveTo(width*.48,height);ctx.bezierCurveTo(width*.48,height*.82,width*.53,height*.78,width*.67,height*.70);ctx.lineTo(width*.84,height*.70);ctx.bezierCurveTo(width*.68,height*.83,width*.65,height*.89,width*.70,height);ctx.closePath();ctx.fill();
-        drawCastle(width*.82,height*.78,height*.44);
-        // Flowering trees and foreground grass
-        for(const tx of [width*.71,width*.94]){ctx.fillStyle='#795648';ctx.fillRect(tx-3,height*.62,6,height*.18);for(let j=0;j<6;j++){const fx=tx+Math.sin(j*7.1+tx)*height*.05,fy=height*.59+Math.cos(j*4.7+tx)*height*.045;ctx.fillStyle=['#8b729d','#ba8fb3','#e5a8b3'][j%3];ctx.beginPath();ctx.arc(fx,fy,height*.035,0,Math.PI*2);ctx.fill();}}
-        for(let i=0;i<24;i++){const gx=(i*71+11)%width,gy=height*(.76+(i%5)*.043);ctx.strokeStyle=i%2?'rgba(79,119,66,.6)':'rgba(129,151,74,.7)';ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(gx,gy);ctx.lineTo(gx-3,gy-7);ctx.moveTo(gx,gy);ctx.lineTo(gx+3,gy-9);ctx.stroke();}
-        drawKing(width*.75,height*.72,height*.50);
-        drawPrincess(width*.95,height*.66,height*.22);
+        const sky=ctx.createLinearGradient(0,0,width,height*.22);sky.addColorStop(0,'#fff1d4');sky.addColorStop(.29,'#f6d5c7');sky.addColorStop(.58,'#d6afc0');sky.addColorStop(.82,'#9982b1');sky.addColorStop(1,'#65577f');ctx.fillStyle=sky;ctx.fillRect(0,0,width,height);
+        const sunrise=ctx.createRadialGradient(width*.15,height*.35,1,width*.15,height*.35,width*.55);sunrise.addColorStop(0,'rgba(255,247,211,.98)');sunrise.addColorStop(.30,'rgba(255,224,181,.72)');sunrise.addColorStop(1,'rgba(252,207,187,0)');ctx.fillStyle=sunrise;ctx.fillRect(0,0,width,height);
+        const sunX=width*.13,sunY=height*.28,sunR=Math.min(width,height)*.105;const sun=ctx.createRadialGradient(sunX-sunR*.25,sunY-sunR*.24,1,sunX,sunY,sunR);sun.addColorStop(0,'#fffde9');sun.addColorStop(.62,'#fff0c9');sun.addColorStop(1,'rgba(255,230,194,.2)');ctx.fillStyle=sun;ctx.beginPath();ctx.arc(sunX,sunY,sunR,0,Math.PI*2);ctx.fill();
+        // Broad, painterly cloud banks: warm and open at the title, violet above the castle.
+        drawCloud(width*.10,height*.18,height*.19,.58);drawCloud(width*.38,height*.20,height*.12,.42);
+        const storm=ctx.createLinearGradient(width*.48,0,width,height*.48);storm.addColorStop(0,'rgba(143,104,163,.46)');storm.addColorStop(.48,'rgba(97,68,135,.82)');storm.addColorStop(1,'rgba(55,43,91,.93)');ctx.fillStyle=storm;
+        ctx.beginPath();ctx.moveTo(width*.49,height*.29);ctx.bezierCurveTo(width*.51,height*.17,width*.57,height*.15,width*.61,height*.19);ctx.bezierCurveTo(width*.63,height*.04,width*.72,height*.04,width*.75,height*.14);ctx.bezierCurveTo(width*.79,height*.00,width*.89,height*.03,width*.91,height*.16);ctx.bezierCurveTo(width*.96,height*.04,width*1.03,height*.11,width*1.03,height*.28);ctx.lineTo(width*1.03,height*.53);ctx.lineTo(width*.50,height*.50);ctx.closePath();ctx.fill();
+        ctx.strokeStyle='rgba(246,207,226,.20)';ctx.lineWidth=height*.008;ctx.beginPath();ctx.moveTo(width*.56,height*.24);ctx.bezierCurveTo(width*.64,height*.10,width*.66,height*.28,width*.74,height*.15);ctx.moveTo(width*.72,height*.27);ctx.bezierCurveTo(width*.82,height*.12,width*.87,height*.27,width*.95,height*.13);ctx.stroke();
+        for(let i=0;i<18;i++){const sx=width*(.54+(i*37%43)/100),sy=height*(.11+(i*29%34)/100);ctx.fillStyle=i%3?'rgba(255,229,187,.72)':'rgba(255,250,221,.95)';ctx.beginPath();ctx.arc(sx,sy,1+(i%3)*.6,0,Math.PI*2);ctx.fill();}
+        // Layered mountains and a far valley keep the left side open for the title.
+        const far=ctx.createLinearGradient(0,height*.40,0,height*.78);far.addColorStop(0,'#9d91b0');far.addColorStop(1,'#7d8190');ctx.fillStyle=far;ctx.beginPath();ctx.moveTo(0,height*.62);ctx.lineTo(width*.12,height*.42);ctx.lineTo(width*.22,height*.55);ctx.lineTo(width*.34,height*.35);ctx.lineTo(width*.46,height*.58);ctx.lineTo(width*.60,height*.37);ctx.lineTo(width*.73,height*.56);ctx.lineTo(width*.86,height*.39);ctx.lineTo(width,height*.49);ctx.lineTo(width,height*.82);ctx.lineTo(0,height*.82);ctx.closePath();ctx.fill();
+        const valley=ctx.createLinearGradient(0,height*.57,0,height);valley.addColorStop(0,'#87917f');valley.addColorStop(.42,'#b7a982');valley.addColorStop(1,'#dfc18b');ctx.fillStyle=valley;ctx.beginPath();ctx.moveTo(0,height*.65);ctx.quadraticCurveTo(width*.13,height*.48,width*.27,height*.64);ctx.quadraticCurveTo(width*.40,height*.50,width*.53,height*.66);ctx.quadraticCurveTo(width*.70,height*.43,width*.86,height*.62);ctx.quadraticCurveTo(width*.95,height*.54,width,height*.60);ctx.lineTo(width,height);ctx.lineTo(0,height);ctx.closePath();ctx.fill();
+        drawCastle(width*.81,height*.79,height*.30);
+        // Sunlit path and the broad stone ledge where the little hero stands.
+        const meadow=ctx.createLinearGradient(0,height*.72,0,height);meadow.addColorStop(0,'#d4bc88');meadow.addColorStop(.5,'#e5cc95');meadow.addColorStop(1,'#c89d6e');ctx.fillStyle=meadow;ctx.beginPath();ctx.moveTo(0,height*.75);ctx.quadraticCurveTo(width*.20,height*.64,width*.36,height*.75);ctx.quadraticCurveTo(width*.54,height*.67,width*.68,height*.77);ctx.quadraticCurveTo(width*.86,height*.64,width,height*.74);ctx.lineTo(width,height);ctx.lineTo(0,height);ctx.closePath();ctx.fill();
+        ctx.fillStyle='rgba(255,242,204,.48)';ctx.beginPath();ctx.moveTo(width*.06,height);ctx.bezierCurveTo(width*.20,height*.88,width*.27,height*.80,width*.42,height*.76);ctx.quadraticCurveTo(width*.52,height*.71,width*.64,height*.76);ctx.lineTo(width*.66,height*.85);ctx.quadraticCurveTo(width*.45,height*.87,width*.40,height);ctx.closePath();ctx.fill();
+        // Stone steps and ledge, with warm edges catching the sunrise.
+        const rock=ctx.createLinearGradient(0,height*.78,0,height);rock.addColorStop(0,'#b9a18e');rock.addColorStop(.18,'#e7d3b5');rock.addColorStop(.55,'#ad8e7a');rock.addColorStop(1,'#705d68');ctx.fillStyle=rock;ctx.beginPath();ctx.moveTo(width*.34,height);ctx.lineTo(width*.43,height*.88);ctx.quadraticCurveTo(width*.50,height*.84,width*.57,height*.86);ctx.lineTo(width*.65,height*.79);ctx.quadraticCurveTo(width*.74,height*.77,width*.83,height*.82);ctx.lineTo(width,height*.76);ctx.lineTo(width,height);ctx.closePath();ctx.fill();
+        ctx.strokeStyle='rgba(255,239,208,.60)';ctx.lineWidth=Math.max(2,height*.006);ctx.beginPath();ctx.moveTo(width*.41,height*.91);ctx.quadraticCurveTo(width*.54,height*.87,width*.66,height*.88);ctx.moveTo(width*.52,height*.84);ctx.quadraticCurveTo(width*.69,height*.80,width*.82,height*.84);ctx.stroke();
+        // Small blossoms and grasses frame the composition without crowding the copy.
+        for(let i=0;i<30;i++){const gx=(i*83+23)%width,gy=height*(.77+(i%6)*.038),s=height*(.010+(i%3)*.002);ctx.strokeStyle=i%2?'rgba(62,91,63,.52)':'rgba(94,107,65,.62)';ctx.lineWidth=Math.max(1,height*.002);ctx.beginPath();ctx.moveTo(gx,gy);ctx.quadraticCurveTo(gx-s*.2,gy-s*.65,gx-s*.36,gy-s);ctx.moveTo(gx,gy);ctx.quadraticCurveTo(gx+s*.25,gy-s*.55,gx+s*.43,gy-s*.85);ctx.stroke();if(i%5===0){ctx.fillStyle='#e6a7b4';ctx.beginPath();ctx.arc(gx+s,gy-s*1.1,s*.28,0,Math.PI*2);ctx.fill();}}
+        drawKing(width*.77,height*.49,height*.37);
+        drawPrincess(width*.93,height*.63,height*.29);
+        const vignette=ctx.createRadialGradient(width*.55,height*.48,height*.18,width*.55,height*.48,width*.76);vignette.addColorStop(.64,'rgba(45,35,67,0)');vignette.addColorStop(1,'rgba(43,32,55,.25)');ctx.fillStyle=vignette;ctx.fillRect(0,0,width,height);
       }
       function drawVillageBackground() {
         const sky=ctx.createLinearGradient(0,0,0,height);sky.addColorStop(0,'#b5cedd');sky.addColorStop(.45,'#e9d6b4');sky.addColorStop(1,'#d2bb9a');ctx.fillStyle=sky;ctx.fillRect(0,0,width,height);
@@ -319,64 +385,129 @@
       function drawBackground() { if(active) drawVillageBackground(); else drawTitleBackground(); }
       function drawFrog(x, bottom, size, defending=false, glow=false, holding=false) {
         ctx.save();
-        const bob = active && !paused ? Math.sin(time*7 + x*.01)*size*.018 : 0;
-        ctx.translate(x, bottom+bob);
-        ctx.fillStyle = 'rgba(50, 38, 47, .22)'; ctx.beginPath(); ctx.ellipse(0, 0, size*.46, size*.10, 0, 0, Math.PI*2); ctx.fill();
-        if (glow) { ctx.shadowColor = '#fff0a2'; ctx.shadowBlur = size*.35; }
-        // Short feet tucked under the soft, pear-shaped body
-        ctx.fillStyle = '#d69d34';
-        ctx.beginPath(); ctx.ellipse(-size*.23,-size*.07,size*.17,size*.105,-.11,0,Math.PI*2); ctx.ellipse(size*.23,-size*.07,size*.17,size*.105,.11,0,Math.PI*2); ctx.fill();
-        // Little arms: the right hand reaches toward the glowing milk ball on the title screen
-        ctx.lineCap='round';ctx.lineWidth=size*.145;ctx.strokeStyle='#e7b63e';ctx.beginPath();ctx.moveTo(-size*.31,-size*.48);ctx.quadraticCurveTo(-size*.53,-size*.36,-size*.43,-size*.22);
-        if(holding){ctx.moveTo(size*.30,-size*.47);ctx.quadraticCurveTo(size*.48,-size*.58,size*.46,-size*.76);}else{ctx.moveTo(size*.31,-size*.48);ctx.quadraticCurveTo(size*.52,-size*.35,size*.43,-size*.22);}ctx.stroke();
-        // Warm golden skin with soft highlight and shaded edges
-        const skin=ctx.createRadialGradient(-size*.18,-size*.78,size*.02,size*.03,-size*.43,size*.71);skin.addColorStop(0,'#fff19e');skin.addColorStop(.37,'#ffd853');skin.addColorStop(.78,'#edb83b');skin.addColorStop(1,'#ce8d31');ctx.fillStyle=skin;ctx.strokeStyle='rgba(156,104,42,.55)';ctx.lineWidth=Math.max(1.1,size*.012);
-        ctx.beginPath();ctx.moveTo(-size*.35,-size*.14);ctx.bezierCurveTo(-size*.53,-size*.36,-size*.47,-size*.75,-size*.28,-size*.88);ctx.quadraticCurveTo(-size*.18,-size*1.02,0,-size*.97);ctx.quadraticCurveTo(size*.20,-size*1.01,size*.29,-size*.87);ctx.bezierCurveTo(size*.48,-size*.71,size*.51,-size*.36,size*.35,-size*.14);ctx.quadraticCurveTo(0,-size*.015,-size*.35,-size*.14);ctx.closePath();ctx.fill();ctx.stroke();
-        // Broad milk-cream belly, softly lit
-        const belly=ctx.createRadialGradient(-size*.08,-size*.48,size*.01,0,-size*.40,size*.38);belly.addColorStop(0,'#fffdf1');belly.addColorStop(.74,'#fff0d4');belly.addColorStop(1,'#e9cfaa');ctx.fillStyle=belly;ctx.beginPath();ctx.ellipse(-size*.01,-size*.39,size*.286,size*.333,-.02,0,Math.PI*2);ctx.fill();
-        // Prominent green frog eyes sit high on the head silhouette
-        ctx.fillStyle='#efc64d';ctx.beginPath();ctx.ellipse(-size*.165,-size*.88,size*.15,size*.17,-.06,0,Math.PI*2);ctx.ellipse(size*.165,-size*.88,size*.15,size*.17,.06,0,Math.PI*2);ctx.fill();
-        const eye=(ex)=>{const ey=-size*.90;const eg=ctx.createRadialGradient(ex-size*.025,ey-size*.03,size*.01,ex,ey,size*.103);eg.addColorStop(0,'#8cc66b');eg.addColorStop(.7,'#5d9852');eg.addColorStop(1,'#407343');ctx.fillStyle=eg;ctx.beginPath();ctx.ellipse(ex,ey,size*.098,size*.104,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#1d2731';ctx.beginPath();ctx.ellipse(ex+size*.012,ey,size*.035,size*.057,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,255,255,.92)';ctx.beginPath();ctx.arc(ex-size*.024,ey-size*.035,size*.021,0,Math.PI*2);ctx.fill();};
-        eye(-size*.165);eye(size*.165);
-        // Two tiny nostrils, peachy cheek dots and a gentle closed smile
-        ctx.fillStyle='#a87839';ctx.beginPath();ctx.arc(-size*.052,-size*.655,size*.014,0,Math.PI*2);ctx.arc(size*.052,-size*.655,size*.014,0,Math.PI*2);ctx.fill();
-        ctx.fillStyle='rgba(237,126,103,.30)';ctx.beginPath();ctx.ellipse(-size*.24,-size*.55,size*.055,size*.028,0,0,Math.PI*2);ctx.ellipse(size*.24,-size*.55,size*.055,size*.028,0,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='#925d3b';ctx.lineWidth=size*.015;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.07,-size*.575);ctx.quadraticCurveTo(0,-size*.53,size*.07,-size*.575);ctx.stroke();
-        if (defending) { ctx.shadowBlur=0;ctx.strokeStyle='rgba(165,220,255,.88)';ctx.lineWidth=Math.max(2,size*.022);ctx.beginPath();ctx.ellipse(0,-size*.52,size*.65,size*.62,0,0,Math.PI*2);ctx.stroke(); }
+        const bob=active&&!paused?Math.sin(time*6.8+x*.01)*size*.012:Math.sin(time*1.7)*size*.008;
+        ctx.translate(x,bottom+bob);
+        const skin=ctx.createRadialGradient(-size*.16,-size*.84,size*.02,size*.03,-size*.44,size*.72);
+        skin.addColorStop(0,'#fff5a6');skin.addColorStop(.26,'#ffe45e');skin.addColorStop(.62,'#f6c83f');skin.addColorStop(.88,'#e9a92c');skin.addColorStop(1,'#a96e32');
+        const limb=ctx.createLinearGradient(-size*.42,-size*.82,size*.34,-size*.06);
+        limb.addColorStop(0,'#ffdf56');limb.addColorStop(.46,'#f3bf39');limb.addColorStop(1,'#bc792f');
+        const hand=ctx.createLinearGradient(-size*.42,-size*.80,-size*.25,-size*.52);
+        hand.addColorStop(0,'#76694a');hand.addColorStop(1,'#403b35');
+        // A soft cast shadow anchors the little figure to the path.
+        ctx.fillStyle='rgba(58,43,52,.27)';ctx.beginPath();ctx.ellipse(0,-size*.015,size*.43,size*.068,0,0,Math.PI*2);ctx.fill();
+        if(glow){ctx.save();ctx.shadowColor='#fff0a5';ctx.shadowBlur=size*.30;ctx.fillStyle='rgba(255,231,137,.18)';ctx.beginPath();ctx.ellipse(0,-size*.48,size*.48,size*.50,0,0,Math.PI*2);ctx.fill();ctx.restore();}
+        // Stubby splayed legs and soft, dark olive feet, matching the supplied turn-around.
+        ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle=limb;ctx.lineWidth=size*.105;
+        ctx.beginPath();ctx.moveTo(-size*.16,-size*.14);ctx.quadraticCurveTo(-size*.17,-size*.045,-size*.23,-size*.012);ctx.moveTo(size*.15,-size*.14);ctx.quadraticCurveTo(size*.17,-size*.045,size*.23,-size*.012);ctx.stroke();
+        ctx.fillStyle=hand;ctx.beginPath();ctx.ellipse(-size*.265,-size*.014,size*.105,size*.035,-.10,0,Math.PI*2);ctx.ellipse(size*.265,-size*.014,size*.105,size*.035,.10,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='rgba(202,177,122,.48)';ctx.lineWidth=Math.max(1,size*.008);ctx.beginPath();ctx.moveTo(-size*.31,-size*.02);ctx.lineTo(-size*.34,-size*.035);ctx.moveTo(-size*.27,-size*.03);ctx.lineTo(-size*.28,-size*.047);ctx.moveTo(size*.31,-size*.02);ctx.lineTo(size*.34,-size*.035);ctx.moveTo(size*.27,-size*.03);ctx.lineTo(size*.28,-size*.047);ctx.stroke();
+        // Thin rounded arms hang from the shoulders; on the cover the left arm reaches up for the milk orb.
+        ctx.strokeStyle=limb;ctx.lineWidth=size*.082;ctx.beginPath();
+        ctx.moveTo(-size*.235,-size*.63);
+        if(holding){ctx.bezierCurveTo(-size*.34,-size*.62,-size*.42,-size*.70,-size*.46,-size*.84);}
+        else{ctx.bezierCurveTo(-size*.37,-size*.55,-size*.39,-size*.38,-size*.34,-size*.29);}
+        ctx.moveTo(size*.235,-size*.63);ctx.bezierCurveTo(size*.34,-size*.55,size*.37,-size*.38,size*.34,-size*.29);ctx.stroke();
+        const drawHand=(hx,hy,raised=false,flip=1)=>{
+          ctx.fillStyle=hand;ctx.beginPath();ctx.ellipse(hx,hy,size*.055,size*.060,flip*.18,0,Math.PI*2);ctx.fill();
+          ctx.strokeStyle=hand;ctx.lineWidth=size*.022;ctx.lineCap='round';ctx.beginPath();
+          if(raised){ctx.moveTo(hx-size*.035,hy-size*.015);ctx.quadraticCurveTo(hx-size*.075,hy-size*.055,hx-size*.060,hy-size*.082);ctx.moveTo(hx+size*.008,hy-size*.032);ctx.quadraticCurveTo(hx-size*.002,hy-size*.075,hx+size*.018,hy-size*.092);ctx.moveTo(hx+size*.038,hy-size*.018);ctx.quadraticCurveTo(hx+size*.060,hy-size*.054,hx+size*.050,hy-size*.072);}
+          else{ctx.moveTo(hx-size*.025,hy+size*.02);ctx.quadraticCurveTo(hx-size*.060,hy+size*.055,hx-size*.048,hy+size*.079);ctx.moveTo(hx+size*.008,hy+size*.03);ctx.quadraticCurveTo(hx-size*.002,hy+size*.067,hx+size*.018,hy+size*.085);ctx.moveTo(hx+size*.035,hy+size*.02);ctx.quadraticCurveTo(hx+size*.060,hy+size*.050,hx+size*.052,hy+size*.071);}
+          ctx.stroke();
+        };
+        drawHand(holding?-size*.46:-size*.34,holding?-size*.84:-size*.29,holding,-1);
+        drawHand(size*.34,-size*.29,false,1);
+        // One uninterrupted, narrow pear-shaped body: broad belly, gently pinched neck.
+        ctx.save();ctx.shadowColor='rgba(122,79,34,.18)';ctx.shadowBlur=size*.055;ctx.shadowOffsetY=size*.018;
+        ctx.fillStyle=skin;ctx.strokeStyle='rgba(167,111,43,.22)';ctx.lineWidth=Math.max(1,size*.009);ctx.beginPath();
+        ctx.moveTo(-size*.155,-size*.955);
+        ctx.bezierCurveTo(-size*.235,-size*.98,-size*.285,-size*.91,-size*.282,-size*.81);
+        ctx.bezierCurveTo(-size*.30,-size*.72,-size*.25,-size*.66,-size*.25,-size*.58);
+        ctx.bezierCurveTo(-size*.27,-size*.48,-size*.335,-size*.34,-size*.32,-size*.225);
+        ctx.bezierCurveTo(-size*.305,-size*.115,-size*.225,-size*.075,-size*.13,-size*.085);
+        ctx.quadraticCurveTo(0,-size*.105,size*.13,-size*.085);
+        ctx.bezierCurveTo(size*.235,-size*.075,size*.305,-size*.12,size*.32,-size*.225);
+        ctx.bezierCurveTo(size*.335,-size*.34,size*.27,-size*.48,size*.25,-size*.58);
+        ctx.bezierCurveTo(size*.25,-size*.66,size*.30,-size*.72,size*.282,-size*.81);
+        ctx.bezierCurveTo(size*.285,-size*.91,size*.235,-size*.98,size*.155,-size*.955);
+        ctx.quadraticCurveTo(0,-size*1.005,-size*.155,-size*.955);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
+        // A large ivory belly is inset into the lower half, with a warm reflected edge.
+        const belly=ctx.createRadialGradient(-size*.08,-size*.53,size*.008,size*.005,-size*.37,size*.38);
+        belly.addColorStop(0,'#fffdf1');belly.addColorStop(.58,'#fff5df');belly.addColorStop(.87,'#f6e7ca');belly.addColorStop(1,'#ddbd88');ctx.fillStyle=belly;
+        ctx.beginPath();ctx.moveTo(-size*.205,-size*.53);ctx.bezierCurveTo(-size*.19,-size*.62,-size*.10,-size*.655,0,-size*.65);ctx.bezierCurveTo(size*.105,-size*.65,size*.20,-size*.61,size*.215,-size*.52);ctx.bezierCurveTo(size*.23,-size*.42,size*.205,-size*.26,size*.16,-size*.19);ctx.quadraticCurveTo(0,-size*.135,-size*.16,-size*.19);ctx.bezierCurveTo(-size*.205,-size*.27,-size*.23,-size*.42,-size*.205,-size*.53);ctx.closePath();ctx.fill();
+        ctx.strokeStyle='rgba(255,255,245,.64)';ctx.lineWidth=Math.max(1,size*.012);ctx.beginPath();ctx.moveTo(-size*.15,-size*.55);ctx.quadraticCurveTo(0,-size*.60,size*.15,-size*.54);ctx.stroke();
+        // Raised eye mounds and emerald irises are the defining silhouette of the reference frog.
+        const eye=(ex,ey,scaleX=1)=>{
+          const mound=ctx.createRadialGradient(ex-size*.035,ey-size*.055,size*.005,ex,ey,size*.115);
+          mound.addColorStop(0,'#fff08a');mound.addColorStop(.57,'#f6ce4f');mound.addColorStop(1,'#c78b32');ctx.fillStyle=mound;ctx.beginPath();ctx.ellipse(ex,ey,size*.105*scaleX,size*.119,0,0,Math.PI*2);ctx.fill();
+          const iris=ctx.createRadialGradient(ex-size*.025,ey-size*.034,size*.006,ex,ey,size*.080);
+          iris.addColorStop(0,'#a2d77d');iris.addColorStop(.38,'#69ad57');iris.addColorStop(.82,'#397746');iris.addColorStop(1,'#264c39');ctx.fillStyle=iris;ctx.beginPath();ctx.ellipse(ex,ey,size*.075*scaleX,size*.080,0,0,Math.PI*2);ctx.fill();
+          ctx.fillStyle='#151f22';ctx.beginPath();ctx.ellipse(ex+size*.008,ey+size*.004,size*.030*scaleX,size*.045,0,0,Math.PI*2);ctx.fill();
+          ctx.fillStyle='rgba(255,255,255,.96)';ctx.beginPath();ctx.ellipse(ex-size*.022,ey-size*.029,size*.020*scaleX,size*.024,0,0,Math.PI*2);ctx.fill();
+          ctx.fillStyle='rgba(255,255,255,.52)';ctx.beginPath();ctx.arc(ex+size*.028,ey+size*.020,size*.008,0,Math.PI*2);ctx.fill();
+        };
+        eye(-size*.125,-size*.842,1.04);eye(size*.125,-size*.842,.96);
+        // Tiny nose marks, flushed cheeks, a curved smile, and a soft forehead sheen.
+        ctx.fillStyle='rgba(146,99,45,.72)';ctx.beginPath();ctx.arc(-size*.034,-size*.738,size*.007,0,Math.PI*2);ctx.arc(size*.034,-size*.738,size*.007,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='rgba(231,132,102,.23)';ctx.beginPath();ctx.ellipse(-size*.205,-size*.61,size*.052,size*.020,-.12,0,Math.PI*2);ctx.ellipse(size*.205,-size*.61,size*.052,size*.020,.12,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='#714b39';ctx.lineWidth=Math.max(1.4,size*.012);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.071,-size*.704);ctx.quadraticCurveTo(0,-size*.669,size*.071,-size*.704);ctx.stroke();
+        ctx.fillStyle='rgba(255,255,224,.38)';ctx.beginPath();ctx.ellipse(-size*.14,-size*.925,size*.070,size*.018,-.34,0,Math.PI*2);ctx.fill();
+        if(defending){ctx.save();ctx.shadowColor='#b5eaff';ctx.shadowBlur=size*.17;ctx.strokeStyle='rgba(197,235,255,.86)';ctx.lineWidth=Math.max(2,size*.022);ctx.beginPath();ctx.ellipse(0,-size*.48,size*.48,size*.48,0,0,Math.PI*2);ctx.stroke();ctx.restore();}
         ctx.restore();
       }
       function drawKing(x,bottom,size) {
         ctx.save();ctx.translate(x,bottom);
-        ctx.fillStyle='rgba(56,33,72,.22)';ctx.beginPath();ctx.ellipse(0,2,size*.52,size*.12,0,0,Math.PI*2);ctx.fill();
-        const cloak=ctx.createLinearGradient(-size*.4,-size*.15,size*.46,0);cloak.addColorStop(0,'#704989');cloak.addColorStop(.55,'#9a70b0');cloak.addColorStop(1,'#49335f');ctx.fillStyle=cloak;
-        ctx.beginPath();ctx.moveTo(-size*.36,-size*.12);ctx.quadraticCurveTo(-size*.52,-size*.49,-size*.35,-size*.72);ctx.quadraticCurveTo(0,-size*.99,size*.35,-size*.72);ctx.quadraticCurveTo(size*.51,-size*.48,size*.36,-size*.12);ctx.quadraticCurveTo(0,size*.03,-size*.36,-size*.12);ctx.closePath();ctx.fill();
-        const face=ctx.createRadialGradient(-size*.12,-size*.77,1,0,-size*.59,size*.43);face.addColorStop(0,'#d5bbec');face.addColorStop(.74,'#9475b7');face.addColorStop(1,'#6b4b8e');ctx.fillStyle=face;ctx.beginPath();ctx.ellipse(0,-size*.65,size*.36,size*.30,0,0,Math.PI*2);ctx.fill();
-        // Crown and tiny jewel
-        ctx.fillStyle='#edc960';ctx.strokeStyle='#a8793d';ctx.lineWidth=Math.max(1,size*.012);ctx.beginPath();ctx.moveTo(-size*.31,-size*.79);ctx.lineTo(-size*.28,-size*.98);ctx.lineTo(-size*.12,-size*.86);ctx.lineTo(0,-size*1.08);ctx.lineTo(size*.12,-size*.86);ctx.lineTo(size*.28,-size*.99);ctx.lineTo(size*.31,-size*.78);ctx.closePath();ctx.fill();ctx.stroke();
-        ctx.fillStyle='#d96c7d';ctx.beginPath();ctx.arc(0,-size*.89,size*.045,0,Math.PI*2);ctx.fill();
-        // Heavy brows, eyes and curled moustache
-        ctx.strokeStyle='#4c3564';ctx.lineWidth=size*.045;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.24,-size*.69);ctx.lineTo(-size*.08,-size*.73);ctx.moveTo(size*.24,-size*.69);ctx.lineTo(size*.08,-size*.73);ctx.stroke();
-        ctx.fillStyle='#fff0bf';ctx.beginPath();ctx.ellipse(-size*.15,-size*.64,size*.065,size*.083,0,0,Math.PI*2);ctx.ellipse(size*.15,-size*.64,size*.065,size*.083,0,0,Math.PI*2);ctx.fill();
-        ctx.fillStyle='#3e2d52';ctx.beginPath();ctx.arc(-size*.14,-size*.63,size*.032,0,Math.PI*2);ctx.arc(size*.14,-size*.63,size*.032,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='#5c3c6f';ctx.lineWidth=size*.035;ctx.beginPath();ctx.moveTo(-size*.09,-size*.50);ctx.quadraticCurveTo(-size*.02,-size*.44,0,-size*.50);ctx.quadraticCurveTo(size*.02,-size*.44,size*.09,-size*.50);ctx.stroke();
-        ctx.fillStyle='#dfc06d';ctx.beginPath();ctx.moveTo(-size*.26,-size*.16);ctx.lineTo(0,-size*.04);ctx.lineTo(size*.26,-size*.16);ctx.lineTo(size*.19,-size*.30);ctx.lineTo(-size*.19,-size*.30);ctx.closePath();ctx.fill();
+        const cloak=ctx.createLinearGradient(-size*.55,-size*.32,size*.56,0);cloak.addColorStop(0,'#382d5a');cloak.addColorStop(.34,'#8b5e9e');cloak.addColorStop(.58,'#705087');cloak.addColorStop(1,'#342947');ctx.fillStyle=cloak;
+        ctx.beginPath();ctx.moveTo(-size*.50,-size*.18);ctx.quadraticCurveTo(-size*.68,-size*.52,-size*.44,-size*.72);ctx.lineTo(-size*.32,-size*.60);ctx.quadraticCurveTo(0,-size*1.01,size*.32,-size*.60);ctx.lineTo(size*.45,-size*.74);ctx.quadraticCurveTo(size*.70,-size*.43,size*.50,-size*.14);ctx.quadraticCurveTo(size*.22,size*.02,-size*.50,-size*.18);ctx.closePath();ctx.fill();
+        // Broad purple cheeks, swept ears and the dark kingly brow.
+        const face=ctx.createRadialGradient(-size*.16,-size*.81,size*.015,0,-size*.65,size*.49);face.addColorStop(0,'#d7a8d4');face.addColorStop(.42,'#a46eaa');face.addColorStop(.78,'#754d88');face.addColorStop(1,'#48365d');ctx.fillStyle=face;
+        ctx.beginPath();ctx.moveTo(-size*.34,-size*.84);ctx.quadraticCurveTo(-size*.51,-size*.88,-size*.50,-size*.70);ctx.quadraticCurveTo(-size*.45,-size*.59,-size*.33,-size*.60);ctx.quadraticCurveTo(-size*.31,-size*.37,0,-size*.36);ctx.quadraticCurveTo(size*.31,-size*.37,size*.33,-size*.60);ctx.quadraticCurveTo(size*.47,-size*.60,size*.51,-size*.72);ctx.quadraticCurveTo(size*.52,-size*.88,size*.34,-size*.84);ctx.quadraticCurveTo(size*.24,-size*1.02,0,-size*.98);ctx.quadraticCurveTo(-size*.25,-size*1.02,-size*.34,-size*.84);ctx.closePath();ctx.fill();
+        // Side horns and cheek ridges.
+        ctx.fillStyle='#6f4b84';ctx.beginPath();ctx.moveTo(-size*.33,-size*.78);ctx.quadraticCurveTo(-size*.62,-size*.88,-size*.54,-size*1.00);ctx.quadraticCurveTo(-size*.39,-size*.96,-size*.28,-size*.84);ctx.moveTo(size*.33,-size*.78);ctx.quadraticCurveTo(size*.62,-size*.88,size*.54,-size*1.00);ctx.quadraticCurveTo(size*.39,-size*.96,size*.28,-size*.84);ctx.fill();
+        ctx.fillStyle='rgba(232,166,205,.32)';ctx.beginPath();ctx.ellipse(-size*.31,-size*.65,size*.12,size*.09,-.12,0,Math.PI*2);ctx.ellipse(size*.31,-size*.65,size*.12,size*.09,.12,0,Math.PI*2);ctx.fill();
+        // Crown with a raised center point and jewel.
+        const crown=ctx.createLinearGradient(0,-size*1.22,0,-size*.92);crown.addColorStop(0,'#ffe08b');crown.addColorStop(.55,'#e2b44d');crown.addColorStop(1,'#a87539');ctx.fillStyle=crown;ctx.strokeStyle='rgba(91,55,66,.62)';ctx.lineWidth=Math.max(1,size*.012);
+        ctx.beginPath();ctx.moveTo(-size*.34,-size*.91);ctx.lineTo(-size*.31,-size*1.13);ctx.lineTo(-size*.14,-size*1.02);ctx.lineTo(0,-size*1.26);ctx.lineTo(size*.14,-size*1.02);ctx.lineTo(size*.31,-size*1.14);ctx.lineTo(size*.34,-size*.91);ctx.closePath();ctx.fill();ctx.stroke();
+        ctx.fillStyle='#9a4969';ctx.beginPath();ctx.arc(0,-size*1.02,size*.054,0,Math.PI*2);ctx.fill();ctx.fillStyle='#ffe7a3';ctx.beginPath();ctx.arc(-size*.018,-size*1.04,size*.018,0,Math.PI*2);ctx.fill();
+        // Heavy brows, pale green eyes and a scowling mouth.
+        ctx.strokeStyle='#4d365f';ctx.lineWidth=size*.055;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.28,-size*.75);ctx.lineTo(-size*.07,-size*.78);ctx.moveTo(size*.28,-size*.75);ctx.lineTo(size*.07,-size*.78);ctx.stroke();
+        ctx.fillStyle='#edebc2';ctx.beginPath();ctx.ellipse(-size*.16,-size*.69,size*.071,size*.078,-.08,0,Math.PI*2);ctx.ellipse(size*.16,-size*.69,size*.071,size*.078,.08,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='#52644d';ctx.beginPath();ctx.arc(-size*.15,-size*.69,size*.036,0,Math.PI*2);ctx.arc(size*.15,-size*.69,size*.036,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='#4a3558';ctx.lineWidth=size*.025;ctx.beginPath();ctx.moveTo(-size*.11,-size*.53);ctx.quadraticCurveTo(0,-size*.49,size*.11,-size*.53);ctx.stroke();
+        // Gold collar and a glint of armor beneath the storm clouds.
+        ctx.fillStyle='#d1a64c';ctx.beginPath();ctx.moveTo(-size*.38,-size*.22);ctx.lineTo(0,-size*.06);ctx.lineTo(size*.38,-size*.22);ctx.lineTo(size*.27,-size*.35);ctx.lineTo(-size*.27,-size*.35);ctx.closePath();ctx.fill();
+        ctx.strokeStyle='rgba(255,226,147,.48)';ctx.lineWidth=Math.max(1,size*.012);ctx.beginPath();ctx.moveTo(-size*.39,-size*.24);ctx.quadraticCurveTo(0,-size*.10,size*.39,-size*.24);ctx.stroke();
         ctx.restore();
       }
       function drawPrincess(x,bottom,size) {
         ctx.save();ctx.translate(x,bottom);
-        // Castle balcony
-        ctx.fillStyle='#87665d';ctx.fillRect(-size*.55,-size*.20,size*1.1,size*.08);ctx.strokeStyle='#d9bb91';ctx.lineWidth=Math.max(1,size*.025);ctx.beginPath();ctx.moveTo(-size*.5,-size*.20);ctx.lineTo(-size*.5,-size*.38);ctx.lineTo(size*.5,-size*.38);ctx.lineTo(size*.5,-size*.20);ctx.moveTo(-size*.25,-size*.36);ctx.lineTo(-size*.25,-size*.20);ctx.moveTo(0,-size*.36);ctx.lineTo(0,-size*.20);ctx.moveTo(size*.25,-size*.36);ctx.lineTo(size*.25,-size*.20);ctx.stroke();
-        const hair=ctx.createRadialGradient(-size*.12,-size*.72,1,0,-size*.55,size*.40);hair.addColorStop(0,'#ffe7a3');hair.addColorStop(.7,'#ce8a53');hair.addColorStop(1,'#965746');ctx.fillStyle=hair;ctx.beginPath();ctx.ellipse(0,-size*.68,size*.31,size*.33,0,0,Math.PI*2);ctx.fill();
-        ctx.fillStyle='#f5d7ad';ctx.beginPath();ctx.ellipse(0,-size*.65,size*.20,size*.24,0,0,Math.PI*2);ctx.fill();
-        ctx.fillStyle='#e8b94f';ctx.beginPath();ctx.arc(0,-size*.82,size*.045,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.moveTo(-size*.14,-size*.86);ctx.lineTo(0,-size*1.02);ctx.lineTo(size*.14,-size*.86);ctx.closePath();ctx.fill();
-        ctx.fillStyle='#4d3c43';ctx.beginPath();ctx.arc(-size*.07,-size*.65,size*.014,0,Math.PI*2);ctx.arc(size*.07,-size*.65,size*.014,0,Math.PI*2);ctx.fill();
-        ctx.strokeStyle='#b66d69';ctx.lineWidth=size*.015;ctx.beginPath();ctx.moveTo(-size*.05,-size*.56);ctx.quadraticCurveTo(0,-size*.53,size*.05,-size*.56);ctx.stroke();
-        const dress=ctx.createLinearGradient(0,-size*.43,0,0);dress.addColorStop(0,'#eab4c9');dress.addColorStop(1,'#a9587f');ctx.fillStyle=dress;ctx.beginPath();ctx.moveTo(-size*.14,-size*.44);ctx.quadraticCurveTo(-size*.34,-size*.30,-size*.38,0);ctx.lineTo(size*.38,0);ctx.quadraticCurveTo(size*.34,-size*.30,size*.14,-size*.44);ctx.closePath();ctx.fill();
+        // Balcony arch and pale stone sill.
+        ctx.fillStyle='rgba(53,37,63,.27)';ctx.fillRect(-size*.60,-size*.37,size*1.20,size*.38);
+        ctx.fillStyle='#ead8c4';ctx.beginPath();ctx.moveTo(-size*.53,-size*.12);ctx.lineTo(-size*.53,-size*.55);ctx.quadraticCurveTo(0,-size*.91,size*.53,-size*.55);ctx.lineTo(size*.53,-size*.12);ctx.closePath();ctx.fill();
+        ctx.fillStyle='#776083';ctx.beginPath();ctx.moveTo(-size*.40,-size*.22);ctx.lineTo(-size*.40,-size*.52);ctx.quadraticCurveTo(0,-size*.82,size*.40,-size*.52);ctx.lineTo(size*.40,-size*.22);ctx.closePath();ctx.fill();
+        // Hair, face, curls and a tiny filigree tiara.
+        const hair=ctx.createRadialGradient(-size*.10,-size*.73,1,0,-size*.60,size*.39);hair.addColorStop(0,'#87543d');hair.addColorStop(.50,'#603b36');hair.addColorStop(1,'#382e3e');ctx.fillStyle=hair;
+        ctx.beginPath();ctx.ellipse(0,-size*.67,size*.255,size*.31,0,0,Math.PI*2);ctx.ellipse(-size*.22,-size*.61,size*.09,size*.20,-.16,0,Math.PI*2);ctx.ellipse(size*.22,-size*.60,size*.09,size*.19,.16,0,Math.PI*2);ctx.fill();
+        const skin=ctx.createRadialGradient(-size*.07,-size*.73,1,0,-size*.64,size*.22);skin.addColorStop(0,'#fff0d8');skin.addColorStop(1,'#d59d84');ctx.fillStyle=skin;ctx.beginPath();ctx.ellipse(0,-size*.65,size*.168,size*.214,0,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='#4a3439';ctx.beginPath();ctx.ellipse(-size*.055,-size*.665,size*.014,size*.022,-.12,0,Math.PI*2);ctx.ellipse(size*.055,-size*.665,size*.014,size*.022,.12,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='rgba(226,132,119,.42)';ctx.beginPath();ctx.ellipse(-size*.116,-size*.60,size*.035,size*.020,0,0,Math.PI*2);ctx.ellipse(size*.116,-size*.60,size*.035,size*.020,0,0,Math.PI*2);ctx.fill();
+        ctx.strokeStyle='#ad6264';ctx.lineWidth=Math.max(1,size*.012);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-size*.035,-size*.55);ctx.quadraticCurveTo(0,-size*.52,size*.04,-size*.55);ctx.stroke();
+        ctx.fillStyle='#e6bd68';ctx.strokeStyle='#9c704b';ctx.lineWidth=Math.max(1,size*.008);ctx.beginPath();ctx.moveTo(-size*.14,-size*.84);ctx.lineTo(-size*.105,-size*.97);ctx.lineTo(-size*.035,-size*.88);ctx.lineTo(0,-size*1.015);ctx.lineTo(size*.045,-size*.88);ctx.lineTo(size*.12,-size*.96);ctx.lineTo(size*.15,-size*.83);ctx.closePath();ctx.fill();ctx.stroke();
+        ctx.fillStyle='#b85270';ctx.beginPath();ctx.arc(0,-size*.90,size*.022,0,Math.PI*2);ctx.fill();
+        // Rose gown and folded sleeves.
+        const dress=ctx.createLinearGradient(0,-size*.45,0,-size*.05);dress.addColorStop(0,'#f4d4d1');dress.addColorStop(.46,'#d893aa');dress.addColorStop(1,'#965b7c');ctx.fillStyle=dress;
+        ctx.beginPath();ctx.moveTo(-size*.105,-size*.45);ctx.quadraticCurveTo(-size*.26,-size*.34,-size*.34,-size*.12);ctx.lineTo(size*.34,-size*.12);ctx.quadraticCurveTo(size*.26,-size*.34,size*.105,-size*.45);ctx.closePath();ctx.fill();
+        ctx.fillStyle='rgba(255,228,215,.52)';ctx.beginPath();ctx.moveTo(-size*.12,-size*.39);ctx.quadraticCurveTo(0,-size*.32,size*.12,-size*.39);ctx.lineTo(size*.20,-size*.13);ctx.lineTo(-size*.20,-size*.13);ctx.closePath();ctx.fill();
+        // Balcony rail in front of the dress.
+        ctx.fillStyle='#846779';ctx.fillRect(-size*.62,-size*.14,size*1.24,size*.055);ctx.fillStyle='#e5c9ad';ctx.fillRect(-size*.62,-size*.18,size*1.24,size*.045);
+        ctx.strokeStyle='#e5c9ad';ctx.lineWidth=Math.max(1,size*.018);ctx.beginPath();ctx.moveTo(-size*.54,-size*.17);ctx.lineTo(-size*.54,-size*.34);ctx.moveTo(-size*.27,-size*.17);ctx.lineTo(-size*.27,-size*.34);ctx.moveTo(0,-size*.17);ctx.lineTo(0,-size*.34);ctx.moveTo(size*.27,-size*.17);ctx.lineTo(size*.27,-size*.34);ctx.moveTo(size*.54,-size*.17);ctx.lineTo(size*.54,-size*.34);ctx.stroke();
         ctx.restore();
       }
       function drawOrb(x,y,r) {
-        ctx.save();const halo=ctx.createRadialGradient(x,y,1,x,y,r*3.4);halo.addColorStop(0,'rgba(255,247,183,.8)');halo.addColorStop(1,'rgba(255,204,65,0)');ctx.fillStyle=halo;ctx.beginPath();ctx.arc(x,y,r*3.4,0,Math.PI*2);ctx.fill();
-        const orb=ctx.createRadialGradient(x-r*.32,y-r*.4,r*.04,x,y,r);orb.addColorStop(0,'#fffbd4');orb.addColorStop(.4,'#ffe67c');orb.addColorStop(.82,'#ffc343');orb.addColorStop(1,'#d68c2b');ctx.fillStyle=orb;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='rgba(255,249,212,.88)';ctx.lineWidth=Math.max(1,r*.09);ctx.stroke();ctx.fillStyle='rgba(255,255,255,.82)';ctx.beginPath();ctx.ellipse(x-r*.27,y-r*.3,r*.18,r*.1,-.7,0,Math.PI*2);ctx.fill();ctx.restore();
+        ctx.save();const halo=ctx.createRadialGradient(x,y,1,x,y,r*4.2);halo.addColorStop(0,'rgba(255,253,218,.88)');halo.addColorStop(.24,'rgba(255,220,118,.35)');halo.addColorStop(1,'rgba(255,204,65,0)');ctx.fillStyle=halo;ctx.beginPath();ctx.arc(x,y,r*4.2,0,Math.PI*2);ctx.fill();
+        const orb=ctx.createRadialGradient(x-r*.34,y-r*.42,r*.025,x,y,r);orb.addColorStop(0,'#ffffff');orb.addColorStop(.26,'#fff8d7');orb.addColorStop(.56,'#ffe27a');orb.addColorStop(.83,'#f8b941');orb.addColorStop(1,'#a96d36');ctx.fillStyle=orb;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='rgba(255,249,219,.92)';ctx.lineWidth=Math.max(1,r*.065);ctx.stroke();
+        ctx.save();ctx.beginPath();ctx.arc(x,y,r*.83,0,Math.PI*2);ctx.clip();ctx.strokeStyle='rgba(255,255,238,.78)';ctx.lineWidth=Math.max(1,r*.11);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(x-r*.49,y+r*.10);ctx.bezierCurveTo(x-r*.13,y-r*.40,x+r*.12,y+r*.47,x+r*.47,y-r*.10);ctx.stroke();ctx.fillStyle='rgba(255,255,255,.74)';ctx.beginPath();ctx.ellipse(x-r*.31,y-r*.38,r*.21,r*.10,-.64,0,Math.PI*2);ctx.fill();ctx.restore();
+        for(let i=0;i<3;i++){const a=time*1.1+i*Math.PI*2/3;ctx.fillStyle='rgba(255,252,218,.88)';ctx.beginPath();ctx.arc(x+Math.cos(a)*r*1.42,y+Math.sin(a)*r*1.42,r*.055,0,Math.PI*2);ctx.fill();}
+        ctx.restore();
       }
       function drawEnemy(e) {
         const s=e.size;
@@ -401,27 +532,35 @@
           for(const e of enemies) drawEnemy(e);
           drawFrog(player.x,player.y || base,unit(),held.defend,player.support>0);
         } else {
-          const heroSize=Math.min(width*.32,height*.52), heroX=width*.59;
-          drawFrog(heroX,base,heroSize,false,true,true);
-          drawOrb(heroX+heroSize*.43,base-heroSize*.82,heroSize*.105);
-          // A few drifting fireflies reinforce the fairy-tale mood.
-          for(let i=0;i<9;i++){const x=width*(.48+i*.052),y=height*(.36+Math.sin(time*1.2+i)*.045);ctx.fillStyle='rgba(255,239,168,.86)';ctx.shadowColor='#ffe68c';ctx.shadowBlur=9;ctx.beginPath();ctx.arc(x,y,2+(i%3),0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
+          const heroSize=Math.min(width*.32,height*.56),heroX=width*.685,heroBase=height*.925;
+          // A fine golden orbit echoes the original rescue scene and sits behind the character.
+          ctx.save();ctx.translate(heroX,heroBase-heroSize*.43);ctx.rotate(-.23);ctx.strokeStyle='rgba(255,230,151,.54)';ctx.lineWidth=Math.max(2,height*.004);ctx.shadowColor='#fff0a2';ctx.shadowBlur=height*.025;ctx.beginPath();ctx.ellipse(0,0,heroSize*.63,heroSize*.32,.03,.18,Math.PI*1.82);ctx.stroke();ctx.restore();
+          drawFrog(heroX,heroBase,heroSize,false,true,true);
+          drawOrb(heroX-heroSize*.52,heroBase-heroSize*.89,heroSize*.095);
+          // A few drifting fireflies and petals add depth around the silhouette.
+          for(let i=0;i<11;i++){const x=width*(.49+i*.043),y=height*(.32+Math.sin(time*1.05+i*.75)*.055);ctx.fillStyle=i%3?'rgba(255,239,168,.82)':'rgba(255,255,232,.94)';ctx.shadowColor='#ffe68c';ctx.shadowBlur=9;ctx.beginPath();ctx.arc(x,y,1.5+(i%3)*.7,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
         }
         if(paused || !active) { /* overlays are handled in HTML */ }
       }
       function resetState() {
         player={x:width*.18,y:groundY(),hp:120,maxHp:120,laugh:0,attackClock:0,hitClock:0,dashClock:0,dashCharge:2,support:0,supportCooldown:0,activeInput:false,grace:0,invuln:1.2,blink:0};
         enemies=[]; shots=[]; sparks=[]; held={left:false,right:false,up:false,down:false,defend:false,attack:false};
-        wave=1; spawned=0; spawnClock=.65; wavePause=0; time=0; score=0; finished=false; paused=false;
+        wave=1; spawned=0; spawnClock=.65; wavePause=0; time=0; score=0; finished=false; paused=false;progressClock=6;
       }
-      function startGame() {
-        resetState(); active=true; titleScreen.classList.add('hidden'); hud.classList.remove('hidden'); controls.classList.remove('hidden'); modal.classList.add('hidden');
+      function startGame(resumeProgress=null) {
+        resetState();
+        if(resumeProgress){wave=clamp(Math.floor(Number(resumeProgress.wave)||1),1,waveSizes.length);score=Math.max(0,Math.floor(Number(resumeProgress.score)||0));player.hp=clamp(Number(resumeProgress.hp)||player.maxHp,1,player.maxHp);spawnClock=.85;wavePause=.75;}
+        else clearProgress();
+        waveLabel.textContent=`击退守卫 · 第 ${wave} / ${waveSizes.length} 波`;
+        active=true; titleScreen.classList.add('hidden'); hud.classList.remove('hidden'); controls.classList.remove('hidden'); modal.classList.add('hidden');helpPanel.classList.add('hidden');
         hint.innerHTML='移动或发射开始冒险<br>首次操作后有 3 秒安全时间';
-        say('奶笑村守卫来了！把禁笑令撕碎，继续前进！'); lastFrame=performance.now();
+        saveProgress();say(wave>1?'奶蛙从上次的检查点继续出发！':'奶笑村守卫来了！把禁笑令撕碎，继续前进！'); lastFrame=performance.now();
       }
+      function continueGame(){startGame(readProgress());}
       function home() {
+        if(active&&player)saveProgress();
         active=false; paused=false; finished=false; modal.classList.add('hidden'); hud.classList.add('hidden'); controls.classList.add('hidden'); titleScreen.classList.remove('hidden');
-        enemies=[]; shots=[]; sparks=[]; player=null; draw();
+        enemies=[]; shots=[]; sparks=[]; player=null;helpPanel.classList.add('hidden');updateContinueNote();draw();
       }
       function say(text) {
         toast.textContent=text; toast.classList.add('show'); liveRegion.textContent=text; toastClock=2.2;
@@ -481,13 +620,14 @@
         best=Math.max(best,score); try{localStorage.setItem('naiwa-adventure-best',String(best));}catch(_){}
       }
       function nextWave() {
-        if(wave>=waveSizes.length){ finished=true; showModal('win'); say('奶笑村守护成功！'); return; }
+        if(wave>=waveSizes.length){ finished=true; clearProgress();showModal('win'); say('奶笑村守护成功！'); return; }
         wave++; spawned=0; spawnClock=1.3; wavePause=1.6; player.hp=Math.min(player.maxHp,player.hp+12); player.dashCharge=Math.min(2,player.dashCharge+1);
-        waveLabel.textContent=`击退守卫 · 第 ${wave} / ${waveSizes.length} 波`; say(`第 ${wave} 波守卫来了！奶蛙体力恢复了。`);
+        waveLabel.textContent=`击退守卫 · 第 ${wave} / ${waveSizes.length} 波`;saveProgress();say(`第 ${wave} 波守卫来了！奶蛙体力恢复了。`);
       }
       function update(dt) {
         if(!active || paused || !player) return;
         time+=dt; const u=unit(), base=groundY();
+        progressClock-=dt;if(progressClock<=0){saveProgress();progressClock=7;}
         player.attackClock=Math.max(0,player.attackClock-dt); player.hitClock=Math.max(0,player.hitClock-dt); player.dashClock=Math.max(0,player.dashClock-dt); player.invuln=Math.max(0,player.invuln-dt); player.grace=Math.max(0,player.grace-dt); player.support=Math.max(0,player.support-dt); player.supportCooldown=Math.max(0,player.supportCooldown-dt);
         if(held.left || held.right || held.up || held.down || held.attack || held.defend) setInputActive();
         const direction=(held.right?1:0)-(held.left?1:0);
@@ -543,11 +683,16 @@
       document.querySelector('[data-action="laugh"]').addEventListener('click',laugh);
       document.querySelector('[data-action="support"]').addEventListener('click',support);
       titleButton.addEventListener('click',startGame);
+      continueButton.addEventListener('click',continueGame);
+      settingsButton.addEventListener('click',()=>helpPanel.classList.toggle('hidden'));
+      helpCloseButton.addEventListener('click',()=>helpPanel.classList.add('hidden'));
       pauseButton.addEventListener('click',togglePause);
       resumeButton.addEventListener('click',()=>{paused=false;modal.classList.add('hidden');lastFrame=performance.now();});
       retryButton.addEventListener('click',startGame);
       homeButton.addEventListener('click',home);
-      fullscreenButton.addEventListener('click',async()=>{ try{ if(!document.fullscreenElement) await document.getElementById('game').requestFullscreen(); else await document.exitFullscreen(); }catch(_){say('当前浏览器暂不支持全屏。');} });
+      const toggleFullscreen=async()=>{try{if(!document.fullscreenElement)await document.getElementById('game').requestFullscreen();else await document.exitFullscreen();}catch(_){say('当前浏览器暂不支持全屏。');}};
+      fullscreenButton.addEventListener('click',toggleFullscreen);
+      titleFullscreenButton.addEventListener('click',toggleFullscreen);
       window.addEventListener('keydown',ev=>{
         if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' '].includes(ev.key)) ev.preventDefault();
         if(ev.key==='Escape'){togglePause();return;}
@@ -560,7 +705,7 @@
       window.addEventListener('keyup',ev=>{const mapped=keyMap[ev.key];if(mapped)held[mapped]=false;});
       window.addEventListener('blur',()=>{if(active&&!paused&&!finished)showModal('pause');held={left:false,right:false,up:false,down:false,defend:false,attack:false};});
       window.addEventListener('resize',resize);
-      resize(); resetState(); home();
+      resize(); resetState(); home();updateContinueNote();
       frameId=requestAnimationFrame(loop);
     })();
   </script>
